@@ -1,0 +1,32 @@
+/* 
+Grote koppen Open Sans Light
+Lopende tekst Open Sans Regular
+Kleine kopjes Open Sans Bold
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/public/font/OpenSans-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+}
+
+body {
+  font: OpenSans;
+  background-color: #ffcc00;
+}
