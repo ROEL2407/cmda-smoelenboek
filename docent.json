@@ -1,0 +1,14 @@
+{"docenten": [{
+    "ID": "1",
+    "afbeelding": "/public/images/a.jpg",
+    "naam": "Hein bijvoet",
+    "vakken": ["hci","content"],
+    "email": "hein@hva.nl",
+    "telefoonnummer": "5467890",
+    "beschrijving": "ik ben hein",
+    "dagen_a": ["maandag", "dinsdag"],
+    "hobbies": "paardrijden",
+    "leuk_feitje": "hein vindt spongebob leuk"
+}
+
+]}
