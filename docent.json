@@ -20,7 +20,7 @@
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
-      "dagen_a": ["woensdag", "donderdag"],
+      "dagen_a": "woensdag, donderdag",
       "hobbies": "paardrijden",
       "leuk_feitje": "hein vindt spongebob leuk"
     },
@@ -32,7 +32,7 @@
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
-      "dagen_a": ["dindsdag", "vrijdag"],
+      "dagen_a": "dindsdag, vrijdag",
       "hobbies": "paardrijden",
       "leuk_feitje": "hein vindt spongebob leuk"
     },
@@ -44,7 +44,7 @@
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
-      "dagen_a": ["maandag", "donderdag"],
+      "dagen_a": "maandag, donderdag",
       "hobbies": "paardrijden",
       "leuk_feitje": "hein vindt spongebob leuk"
     }
