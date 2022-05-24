@@ -12,23 +12,21 @@
         <section id="aanwezig">
             <h2>Aanwezig</h2>
             <section class="docenten">
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <% today.forEach(function(item){ %>
+                    <a href="">
+                        <img src="<%- item.docent.afbeelding -%>" alt="">
+                        <%- item.docent.naam -%></a>
+                <% }) %>
             </section>
         </section>
         <section id="afwezig">
             <h2>Afwezig</h2>
             <section class="docenten">
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <% today.forEach(function(item){ %>
+                    <a href="">
+                        <img src="<%- item.docent.afbeelding -%>" alt="">
+                        <%- item.docent.naam -%></a>
+                <% }) %>
             </section>
         </section>
     </main>
