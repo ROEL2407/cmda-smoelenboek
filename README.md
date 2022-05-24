@@ -3,44 +3,54 @@
 <!--![CMDA Smoelenboek](...)-->
 
 ## Inhoudsopgave
-  * [Beschrijving](#beschrijving)
-  * [Opdrachtgever](#opdrachtgever)
-  * [Design challenge](#design-challege)
-  * [Data](#data)
-  * [Planning](#planning)
-  * [Licentie](#licentie)
+  * [Debrief](#Debrief)
 
-## Beschrijving
-Tot vorig jaar hingen er foto’s van de docenten van CMD in de gang in de medialounge. Die foto’s hangen er niet meer. Er zijn inmiddels ook zoveel collega’s dat we de hele gang met foto’s zouden moeten behangen. Dat kan digitaler en interactiever. Bovendien is er veel meer interessants te vermelden over onze docenten dan alleen hun naam.
+## Debrief
+In deze debriefing zullen wij de opdracht en de opdrachtgever in kaart brengen:
 
-## Opdrachtgever
-CMD Amsterdam  
-Product Owner: Vasilis van Gemert
+### Contactgegevens
+Wij maken deze opdracht voor de opleiding Communication and Multimedia Design van de Hogeschool van Amsterdam.
 
-## Design challenge
-De docenten moeten met z'n allen op een heel groot scherm zichtbaar zijn. Je moet kunnen klikken op een foto en dan meer info kunnen lezen. En idealiter zou het gekoppeld moeten zijn aan een bestaande API zodat docenten hun eigen profiel kunnen updaten.
+Ons contactpersoon is Vasilis van Gemert. Vasilis wordt het liefst op teams gecontacteerd onder dezelfde naam. Zijn email is: v.van.gemert@hva.nl en de locatie waar Vasilis vooral te vinden is, is het Theo Thijssenhuis van de HvA in Amsterdam.
 
-### User stories
-**1. Docent opzoeken**
+Wij hebben deze opdracht aangevraagd gekregen op 23-05-2022 en deze zal opgeleverd worden op 23-06-2022.
 
-Als student,
-wil ik snel een naam bij een gezicht kunnen vinden, zodat ik weet hoe mijn docent er uitziet/ook al weer heet.
+### Achtergrondinformatie
+De opdrachtgever is de opleiding Communication and Multimedia Design van de HvA in Amsterdam. Deze opleiding biedt lessen voor studenten op HBO-niveau.
 
-**2 Connectie met docent maken**
+### Opdrachtomschrijving
+De opdracht is het maken van een digitaal smoelenboek. In dit smoelenboek kunnen de docenten en studenten alle docenten van CMD zien. 
 
-Als docent,
-wil ik snel meer weten over collega’s, zodat ik interessantere connecties weet te leggen
+CMD wil een digitaal Smoelenboek zodat studenten en docenten kunnen zien wie er werken binnen de CMD opleiding en zo contact met ze kunnen opnemen. 
 
-**3 Profiel kunnen wijzigen**
+### Aanleiding
+De reden dat deze opdracht ingediend wordt is omdat er vroeger in de gang bij de medialounge foto’s van alle docenten hingen waarop je kon zien wie er werkte. Na de verhuizing van de medialounge zijn deze foto’s weggehaald. Dit digitaal smoelenboek moet ervoor zorgen dat je weer een beeld krijgt bij de naam van de docent. 
 
-Als docent,
-wil ik eenvoudig mijn profiel kunnen wijzigen, zodat ik dat niet op honderd verschillende plekken hoef te doen.
+### Doelstelling
+Elk bedrijf hanteert doelstellingen. Afhankelijk van de grootte van het bedrijf kan het gaan om een doelstelling van het bedrijf, de afdeling of een persoonlijke doelstelling van jouw contactpersoon.
 
-## Data
-Data moet kunnen worden ontsloten en beheerd in een CMS systeem.
+### Oplevering
+Wij zullen een digitaal product opleveren waarin een overzicht van docenten afgebeeld wordt. Docenten kunnen hun eigen informatie invullen of aanpassen. Voor ons product gebruiken wij de CMD huisstijl. Dit product zal op een groot touchscreen in de medialounge neergezet worden zodat docenten en studenten de docenten kunnen leren kennen.
 
-## Planning
-In de eerste week van de meesterproef is een briefing met de opdrachtgever en begeleiders. Wekelijks wordt aan de opdrachtgever een prototype gedemonstreerd en de volgende stappen besproken. Tussentijds kunnen via Teams vragen gesteld worden.
+### Randvoorwaarden
+De randvoorwaarden van deze opdracht zijn:
+
+* Het product moet op een groot scherm werken
+* Het moet te gebruiken zijn voor blinde mensen en mensen in een rolstoel
+* Het project zal gemaakt worden in CSS, HTML en JavaScript
+* Docenten moeten hun eigen informatie aan kunnen passen
+* Studenten en docenten moeten docenten kunnen leren kennen
+* Er moet plaats zijn voor formele en informele informatie bij de docenten
+* Er is geen dataset dus deze moet zelf gemaakt worden met behulp van een zelfgemaakte API
+* Een diamanten beeldscherm behoort niet tot de oplevering
+
+### Gebruikers van het eindresultaat
+De website is bedoeld voor studenten en docenten. Met de website kunnen docenten andere docenten opzoeken en studenten kunnen zien wie hun docenten zijn. Docenten kunnen contact leggen met andere docenten. 
+
+### Relatie met andere projecten
+Het project is onderdeel van de HvA. 
+
+
 
 ## Licentie
 
