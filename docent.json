@@ -1,14 +1,52 @@
-{"docenten": [{
-    "ID": "1",
-    "afbeelding": "/public/images/a.jpg",
-    "naam": "Hein bijvoet",
-    "vakken": ["hci","content"],
-    "email": "hein@hva.nl",
-    "telefoonnummer": "5467890",
-    "beschrijving": "ik ben hein",
-    "dagen_a": ["maandag", "dinsdag"],
-    "hobbies": "paardrijden",
-    "leuk_feitje": "hein vindt spongebob leuk"
+{
+  "docenten": [
+    {
+      "ID": "1",
+      "afbeelding": "/public/images/a.jpg",
+      "naam": "Hein bijvoet",
+      "vakken": ["hci", "content"],
+      "email": "hein@hva.nl",
+      "telefoonnummer": "5467890",
+      "beschrijving": "ik ben hein",
+      "dagen_a": ["maandag", "dinsdag"],
+      "hobbies": "paardrijden",
+      "leuk_feitje": "hein vindt spongebob leuk"
+    },
+    {
+      "ID": "1",
+      "afbeelding": "/public/images/a.jpg",
+      "naam": "Jan Klaas",
+      "vakken": ["hci", "content"],
+      "email": "hein@hva.nl",
+      "telefoonnummer": "5467890",
+      "beschrijving": "ik ben hein",
+      "dagen_a": ["woensdag", "donderdag"],
+      "hobbies": "paardrijden",
+      "leuk_feitje": "hein vindt spongebob leuk"
+    },
+    {
+      "ID": "1",
+      "afbeelding": "/public/images/a.jpg",
+      "naam": "Piet Klaas",
+      "vakken": ["hci", "content"],
+      "email": "hein@hva.nl",
+      "telefoonnummer": "5467890",
+      "beschrijving": "ik ben hein",
+      "dagen_a": ["dindsdag", "vrijdag"],
+      "hobbies": "paardrijden",
+      "leuk_feitje": "hein vindt spongebob leuk"
+    },
+    {
+      "ID": "1",
+      "afbeelding": "/public/images/a.jpg",
+      "naam": "Hans Jan",
+      "vakken": ["hci", "content"],
+      "email": "hein@hva.nl",
+      "telefoonnummer": "5467890",
+      "beschrijving": "ik ben hein",
+      "dagen_a": ["maandag", "donderdag"],
+      "hobbies": "paardrijden",
+      "leuk_feitje": "hein vindt spongebob leuk"
+    }
+  ]
 }
-
-]}
