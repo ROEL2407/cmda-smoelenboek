@@ -31,6 +31,19 @@ body {
 
 header {
   background-color: #ffcc00;
+  background-image: url("../images/icons.png");
   text-align: center;
   font-weight: bold;
+  padding: 1em 0em;
+}
+
+header h1, header h2 {
+  text-shadow: -1px 1px 0 #000,
+ 1px 1px 0 #000,
+ 1px -1px 0 #000,
+-1px -1px 0 #000;
+    color: #fff;
+    width: 25%;
+    margin: 0em auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
