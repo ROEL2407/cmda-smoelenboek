@@ -16,7 +16,9 @@ app.get("/", (req, res) => {
         .then((data) => {
           console.log(data);
           res.render("index", {data});
-        })
+        }).catch(err => {
+          console.log(err);
+        });
 });
 
 app.listen(port, () => {
