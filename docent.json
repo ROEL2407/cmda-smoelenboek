@@ -2,9 +2,9 @@
   "docenten": [
     {
       "ID": "1",
-      "afbeelding": "/public/images/a.jpg",
+      "afbeelding": "/images/a.jpg",
       "naam": "Hein bijvoet",
-      "vakken": ["hci", "content"],
+      "vakken": "hci, content",
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
@@ -13,10 +13,10 @@
       "leuk_feitje": "hein vindt spongebob leuk"
     },
     {
-      "ID": "1",
-      "afbeelding": "/public/images/a.jpg",
+      "ID": "2",
+      "afbeelding": "/images/a.jpg",
       "naam": "Jan Klaas",
-      "vakken": ["hci", "content"],
+      "vakken": "hci, content",
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
@@ -25,10 +25,10 @@
       "leuk_feitje": "hein vindt spongebob leuk"
     },
     {
-      "ID": "1",
-      "afbeelding": "/public/images/a.jpg",
+      "ID": "3",
+      "afbeelding": "/images/a.jpg",
       "naam": "Piet Klaas",
-      "vakken": ["hci", "content"],
+      "vakken": "hci, content",
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
@@ -37,10 +37,10 @@
       "leuk_feitje": "hein vindt spongebob leuk"
     },
     {
-      "ID": "1",
-      "afbeelding": "/public/images/a.jpg",
+      "ID": "4",
+      "afbeelding": "/images/a.jpg",
       "naam": "Hans Jan",
-      "vakken": ["hci", "content"],
+      "vakken": "hci, content",
       "email": "hein@hva.nl",
       "telefoonnummer": "5467890",
       "beschrijving": "ik ben hein",
