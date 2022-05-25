@@ -27,7 +27,7 @@ button {
 
 @font-face {
   font-family: "OpenSans";
-  src: url("./font/OpenSans-VariableFont_wdth,wght.ttf") format("truetype");
+  src: url("../font/OpenSans-VariableFont_wdth.ttf") format("truetype");
 }
 
 body {
