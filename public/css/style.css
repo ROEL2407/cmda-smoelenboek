@@ -56,9 +56,17 @@ main {
   margin: 1em;
 }
 
+main h2 {
+  margin: 1em 0em;
+}
+
 .docenten {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.docenten p {
+  padding-top: 0.25em;
 }
