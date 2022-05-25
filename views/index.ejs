@@ -13,9 +13,10 @@
             <h2>Aanwezig</h2>
             <section class="docenten">
                 <% today.forEach(function(item){ %>
-                    <a href="">
+                    <a href="/detail/<%- item.objectNumber %>">
                         <img src="<%- item.docent.afbeelding -%>" alt="">
-                        <%- item.docent.naam -%></a>
+                        <p><%- item.docent.naam -%></p>
+                    </a>
                 <% }) %>
             </section>
         </section>
@@ -23,9 +24,10 @@
             <h2>Afwezig</h2>
             <section class="docenten">
                 <% not_today.forEach(function(item){ %>
-                    <a href="">
+                    <a href="/detail/<%- item.objectNumber %>">
                         <img src="<%- item.docent.afbeelding -%>" alt="">
-                        <%- item.docent.naam -%></a>
+                        <p><%- item.docent.naam -%></p>
+                        </a>
                 <% }) %>
             </section>
         </section>

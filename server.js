@@ -43,6 +43,17 @@ app.get("/", (req, res) => {
     });
 });
 
+// get specific info of 1 teacher and display on page
+app.get("/detail/:id", function (req, res) {
+  console.log(req.params.id);
+  fetch(
+    `https://www.rijksmuseum.nl/api/nl/collection/${req.params.id}`
+  )
+    .then({
+    })
+    .catch((err) => res.send(err));
+});
+
 app.listen(port, () => {
   console.log("listening on port ", port);
 });
