@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("./components/head.ejs") -%>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <h1>CMDA Smoelenboek</h1>
+      <h2>Ontmoet alle docenten</h2>
+    </header>
+    <main>
+      <img src="<%- document.data.foto.url %>" />
+      <h1><%- ctx.prismicH.asText(document.data.title) %></h1>
+      <%- ctx.prismicH.asHTML(document.data.description) %>
+      <section>
+        <h1 class="teacher-info-name"><%- document.data.naam[0].text %></h1>
+        <h2>Vakken</h2>
+        <p>
+          <%- document.data.vakken.length === 0 ? "None" :
+          document.data.vakken[0].text %>
+        </p>
+        <h2>Beschrijving</h2>
+        <p>
+          <%- document.data.beschrijving.length === 0 ? "None" :
+          document.data.beschrijving[0].text %>
+        </p>
+        <h2>Hobbies</h2>
+        <p>
+          <%- document.data.hobbies.length === 0 ? "None" :
+          document.data.hobbies[0].text %>
+        </p>
+        <h2>Aanwezig</h2>
+        <p>
+          <%- document.data.dagen_aanwezig.length === 0 ? "None" :
+          document.data.dagen_aanwezig[0].text %>
+        </p>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>

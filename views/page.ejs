@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/head.ejs") -%>
+  </head>
+  <body>
+    <header>
+      <h1>CMDA Smoelenboek</h1>
+      <h2>Ontmoet alle docenten</h2>
+    </header>
+    <main>
+      <% document.forEach(teacher => { %>
+      <a href="/detail/<%= teacher.id %>" class="teacher-link">
+        <img src="<%- teacher.data.foto.url %>" />
+        <h1><%- ctx.prismicH.asText(teacher.data.naam) %></h1>
+      </a>
+      <% }) %>
+    </main>
+    <footer></footer>
+  </body>
+</html>

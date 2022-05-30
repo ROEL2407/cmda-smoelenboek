@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("./components/head.ejs") -%>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>CMDA Smoelenboek</h1>
-        <h2>Ontmoet alle docenten</h2>
+      <h1>CMDA Smoelenboek</h1>
+      <h2>Ontmoet alle docenten</h2>
     </header>
     <main>
-        <section id="aanwezig">
-            <h2>Aanwezig</h2>
-            <section class="docenten">
-                <% today.forEach(function(item){ %>
-                    <a href="/detail/<%- item.objectNumber %>">
-                        <img src="<%- item.docent.afbeelding -%>" alt="">
-                        <p><%- item.docent.naam -%></p>
-                    </a>
-                <% }) %>
-            </section>
+      <img src="<%- document.data.image.url %>" />
+      <h1><%- ctx.prismicH.asText(document.data.title) %></h1>
+      <%- ctx.prismicH.asHTML(document.data.description) %>
+
+      <section id="aanwezig">
+        <h2>Aanwezig</h2>
+        <section class="docenten">
+          <% today.forEach(function(item){ %>
+          <a href="/detail/<%- item.objectNumber %>">
+            <img src="<%- item.docent.afbeelding -%>" alt="" />
+            <p><%- item.docent.naam -%></p>
+          </a>
+          <% }) %>
         </section>
-        <section id="afwezig">
-            <h2>Afwezig</h2>
-            <section class="docenten">
-                <% not_today.forEach(function(item){ %>
-                    <a href="/detail/<%- item.objectNumber %>">
-                        <img src="<%- item.docent.afbeelding -%>" alt="">
-                        <p><%- item.docent.naam -%></p>
-                        </a>
-                <% }) %>
-            </section>
+      </section>
+      <section id="afwezig">
+        <h2>Afwezig</h2>
+        <section class="docenten">
+          <% not_today.forEach(function(item){ %>
+          <a href="/detail/<%- item.objectNumber %>">
+            <img src="<%- item.docent.afbeelding -%>" alt="" />
+            <p><%- item.docent.naam -%></p>
+          </a>
+          <% }) %>
         </section>
+      </section>
     </main>
     <footer></footer>
-</body>
+  </body>
 </html>
