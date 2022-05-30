@@ -56,6 +56,10 @@ app.get("/detail/:id", async (req, res) => {
   res.render("detail", { document });
 });
 
+app.get("/create", (req, res) => {
+      res.render("create", { });
+});
+
 // Listen to application port.
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
