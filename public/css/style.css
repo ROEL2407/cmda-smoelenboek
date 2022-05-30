@@ -76,7 +76,6 @@ main h2 {
   padding-top: 0.25em;
 }
 
-
 /* Create page */
 
 #create_form {
@@ -100,4 +99,21 @@ form input {
 
 form label {
   margin-bottom: 0.25em;
+}
+
+/* Detail page */
+.teacherName {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.teacherImage {
+  max-width: 100%;
+  width: 50%;
+}
+
+.teacherInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
