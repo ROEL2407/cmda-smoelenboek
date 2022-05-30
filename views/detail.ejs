@@ -9,31 +9,30 @@
       <h2>Ontmoet alle docenten</h2>
     </header>
     <main>
-      <img src="<%- document.data.foto.url %>" />
-      <h1><%- ctx.prismicH.asText(document.data.title) %></h1>
-      <%- ctx.prismicH.asHTML(document.data.description) %>
-      <section>
-        <h1 class="teacher-info-name"><%- document.data.naam[0].text %></h1>
+      <h1 class="teacherName"><%- document.data.naam[0].text %></h1>
+      <section class="teacherInfo">
+        <img class="teacherImage" src="<%- document.data.foto.url %>" />
+        <section class="teacherDetail">
+          <% if(document.data.vakken.length > 0){ %>
+          <h2>Vakken</h2>
+          <p><%- document.data.vakken[0].text -%><% } %></p>
 
-        <% if(document.data.vakken.length > 0){ %>
-        <h2>Vakken</h2>
-        <p><%- document.data.vakken[0].text -%><% } %></p>
+          <% if(document.data.beschrijving.length > 0){ %>
+          <h2>Beschrijving</h2>
+          <p><%- document.data.beschrijving[0].text -%><% } %></p>
 
-        <% if(document.data.beschrijving.length > 0){ %>
-        <h2>Beschrijving</h2>
-        <p><%- document.data.beschrijving[0].text -%><% } %></p>
+          <% if(document.data.hobbies.length > 0){ %>
+          <h2>Hobbies</h2>
+          <p><%- document.data.hobbies[0].text -%><% } %></p>
 
-        <% if(document.data.hobbies.length > 0){ %>
-        <h2>Hobbies</h2>
-        <p><%- document.data.hobbies[0].text -%><% } %></p>
+          <% if(document.data.dagen_aanwezig.length > 0){ %>
+          <h2>Aanwezig</h2>
+          <p><%- document.data.dagen_aanwezig[0].text -%><% } %></p>
 
-        <% if(document.data.dagen_aanwezig.length > 0){ %>
-        <h2>Aanwezig</h2>
-        <p><%- document.data.dagen_aanwezig[0].text -%><% } %></p>
-
-        <% if(document.data.leuk_feitje.length > 0){ %>
-        <h2>Feitje</h2>
-        <p><%- document.data.leuk_feitje[0].text -%><% } %></p>
+          <% if(document.data.leuk_feitje.length > 0){ %>
+          <h2>Feitje</h2>
+          <p><%- document.data.leuk_feitje[0].text -%><% } %></p>
+        </section>
       </section>
     </main>
     <footer></footer>
