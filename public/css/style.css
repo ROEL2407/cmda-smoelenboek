@@ -60,6 +60,7 @@ main h2 {
   margin: 1em 0em;
 }
 
+/* Home page / smoelenboek overzicht */
 .docenten {
   display: flex;
   flex-direction: row;
@@ -69,4 +70,22 @@ main h2 {
 
 .docenten p {
   padding-top: 0.25em;
+}
+
+
+/* Create page */
+
+#create_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+fieldset {
+  border: none;
+}
+
+form img {
+  max-width: 10em;
 }

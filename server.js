@@ -54,6 +54,11 @@ app.get("/detail/:id", function (req, res) {
     .catch((err) => res.send(err));
 });
 
+
+app.get("/create", (req, res) => {
+      res.render("create", { });
+});
+
 app.listen(port, () => {
   console.log("listening on port ", port);
 });
