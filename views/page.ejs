@@ -9,12 +9,28 @@
       <h2>Ontmoet alle docenten</h2>
     </header>
     <main>
-      <% document.forEach(teacher => { %>
-      <a href="/detail/<%= teacher.id %>" class="teacher-link">
-        <img src="<%- teacher.data.foto.url %>" />
-        <h1><%- ctx.prismicH.asText(teacher.data.naam) %></h1>
-      </a>
-      <% }) %>
+      <section id="aanwezig">
+        <h2>Aanwezig</h2>
+        <section class="docenten">
+          <% today.forEach(teacher => { %>
+          <a href="/detail/<%= teacher.docent.id %>" class="teacher-link">
+            <img src="<%- teacher.docent.data.foto.url %>" />
+            <h1><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h1>
+          </a>
+          <% }) %>
+        </section>
+      </section>
+      <section id="afwezig">
+        <h2>Afwezig</h2>
+        <section class="docenten">
+          <% not_today.forEach(teacher => { %>
+          <a href="/detail/<%= teacher.docent.id %>" class="teacher-link">
+            <img src="<%- teacher.docent.data.foto.url %>" />
+            <h1><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h1>
+          </a>
+          <% }) %>
+        </section>
+      </section>
     </main>
     <footer></footer>
   </body>

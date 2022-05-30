@@ -7,6 +7,14 @@ import { client } from "./config/prismicConfig.js";
 const app = express();
 const port = process.env.PORT || 4242;
 
+const options = {
+  weekday: "long",
+};
+
+let today = new Date().toLocaleDateString("nl-NL", options);
+let available = [];
+let unavailable = [];
+
 // Set EJS as templating engine
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -26,8 +34,20 @@ app.use((req, res, next) => {
 app.get("/", async (req, res) => {
   // Here we are retrieving the first document from your API endpoint
   const document = await client.getAllByType("persoon");
-  console.log(document);
-  res.render("page", { document });
+  available = [];
+  unavailable = [];
+  document.forEach((docent) => {
+    if (docent.data.dagen_aanwezig[0].text.toLowerCase().includes(today)) {
+      available.push({
+        docent: docent,
+      });
+    } else {
+      unavailable.push({
+        docent: docent,
+      });
+    }
+  });
+  res.render("page", { today: available, not_today: unavailable });
 });
 
 app.get("/detail/:id", async (req, res) => {
