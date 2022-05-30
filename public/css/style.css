@@ -93,3 +93,11 @@ fieldset {
 form img {
   max-width: 10em;
 }
+
+form input {
+  margin-bottom: 1em;
+}
+
+form label {
+  margin-bottom: 0.25em;
+}
