@@ -9,32 +9,32 @@
       <h2>Ontmoet alle docenten</h2>
     </header>
     <main>
-      <h1 class="teacherName"><%- document.data.naam[0].text %></h1>
+      <h2 class="teacherName"><%- document.data.naam[0].text %></h2>
       <section class="teacherInfo">
         <img class="teacherImage" src="<%- document.data.foto.url %>" />
         <section class="teacherDetail">
           <% if(document.data.vakken.length > 0){ %>
-          <h2>Vakken</h2>
+          <h3>Vakken</h3>
           <p><%- document.data.vakken[0].text -%><% } %></p>
 
           <% if(document.data.email.length > 0){ %>
-          <h2>Email</h2>
+          <h3>Email</h3>
           <p><%- document.data.email[0].text -%><% } %></p>
 
           <% if(document.data.beschrijving.length > 0){ %>
-          <h2>Beschrijving</h2>
+          <h3>Beschrijving</h3>
           <p><%- document.data.beschrijving[0].text -%><% } %></p>
 
           <% if(document.data.hobbies.length > 0){ %>
-          <h2>Hobbies</h2>
+          <h3>Hobbies</h3>
           <p><%- document.data.hobbies[0].text -%><% } %></p>
 
           <% if(document.data.dagen_aanwezig.length > 0){ %>
-          <h2>Aanwezig</h2>
+          <h3>Aanwezig</h3>
           <p><%- document.data.dagen_aanwezig[0].text -%><% } %></p>
 
           <% if(document.data.leuk_feitje.length > 0){ %>
-          <h2>Feitje</h2>
+          <h3>Feitje</h3>
           <p><%- document.data.leuk_feitje[0].text -%><% } %></p>
         </section>
       </section>
