@@ -5,22 +5,25 @@
   </head>
   <body>
     <header>
-        <h1>CMDA Smoelenboek</h1>
-        <h2>Ontmoet alle docenten</h2>
-        <a href="/create">create</a>
+      <h1>CMDA Smoelenboek</h1>
+      <h2>Ontmoet alle docenten</h2>
     </header>
     <main>
-      <img src="<%- document.data.image.url %>" />
-      <h1><%- ctx.prismicH.asText(document.data.title) %></h1>
-      <%- ctx.prismicH.asHTML(document.data.description) %>
-
       <section id="aanwezig">
         <h2>Aanwezig</h2>
         <section class="docenten">
-          <% today.forEach(function(item){ %>
-          <a href="/detail/<%- item.objectNumber %>">
-            <img src="<%- item.docent.afbeelding -%>" alt="" />
-            <p><%- item.docent.naam -%></p>
+          <% today.forEach(teacher => { %>
+          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+            <div class="images">
+              <% if(teacher.docent.data.frame !== null){ %>
+              <img
+                class="frame"
+                src="/images/frames/<%- teacher.docent.data.frame%>.png"
+              />
+              <% } %>
+              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+            </div>
+            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
           </a>
           <% }) %>
         </section>
@@ -28,10 +31,18 @@
       <section id="afwezig">
         <h2>Afwezig</h2>
         <section class="docenten">
-          <% not_today.forEach(function(item){ %>
-          <a href="/detail/<%- item.objectNumber %>">
-            <img src="<%- item.docent.afbeelding -%>" alt="" />
-            <p><%- item.docent.naam -%></p>
+          <% not_today.forEach(teacher => { %>
+          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+            <div class="images">
+              <% if(teacher.docent.data.frame !== null){ %>
+              <img
+                class="frame"
+                src="/images/frames/<%- teacher.docent.data.frame%>.png"
+              />
+              <% } %>
+              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+            </div>
+            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
           </a>
           <% }) %>
         </section>
