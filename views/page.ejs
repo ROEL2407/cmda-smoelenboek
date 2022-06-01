@@ -13,15 +13,17 @@
         <h2>Aanwezig</h2>
         <section class="docenten">
           <% today.forEach(teacher => { %>
-          <a href="/detail/<%= teacher.docent.id %>" class="teacher-link">
-            <% if(teacher.docent.data.frame !== null){ %>
-            <img
-              class="frame"
-              src="/images/frames/<%- teacher.docent.data.frame%>.png"
-            />
-            <% } %>
-            <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
-            <h1><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h1>
+          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+            <div class="images">
+              <% if(teacher.docent.data.frame !== null){ %>
+              <img
+                class="frame"
+                src="/images/frames/<%- teacher.docent.data.frame%>.png"
+              />
+              <% } %>
+              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+            </div>
+            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
           </a>
           <% }) %>
         </section>
@@ -30,13 +32,15 @@
         <h2>Afwezig</h2>
         <section class="docenten">
           <% not_today.forEach(teacher => { %>
-          <a href="/detail/<%= teacher.docent.id %>" class="teacher-link">
+          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+            <% if(teacher.docent.data.frame !== null){ %>
             <img
               class="frame"
               src="/images/frames/<%- teacher.docent.data.frame%>.png"
             />
+            <% } %>
             <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
-            <h1><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h1>
+            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
           </a>
           <% }) %>
         </section>
