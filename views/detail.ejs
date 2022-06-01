@@ -17,6 +17,10 @@
           <h2>Vakken</h2>
           <p><%- document.data.vakken[0].text -%><% } %></p>
 
+          <% if(document.data.email.length > 0){ %>
+          <h2>Email</h2>
+          <p><%- document.data.email[0].text -%><% } %></p>
+
           <% if(document.data.beschrijving.length > 0){ %>
           <h2>Beschrijving</h2>
           <p><%- document.data.beschrijving[0].text -%><% } %></p>
