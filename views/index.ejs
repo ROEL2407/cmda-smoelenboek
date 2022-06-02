@@ -5,8 +5,19 @@
   </head>
   <body>
     <header>
-      <h1>CMDA Smoelenboek</h1>
-      <h2>Ontmoet alle docenten</h2>
+      <a href="/">
+        <h1>CMDA Smoelenboek</h1>
+        <h2>Ontmoet alle docenten</h2>
+      </a>
+      <form method="get" action="/search" data-search-form>
+        <input
+          type="search"
+          name="q"
+          placeholder="Zoek een docent"
+          data-search-input
+        />
+        <button type="submit" aria-label="zoeken">Zoeken</button>
+      </form>
     </header>
     <main>
       <section id="aanwezig">
