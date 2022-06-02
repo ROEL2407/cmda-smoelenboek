@@ -51,13 +51,26 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/detail/:id", async (req, res) => {
-  console.log(req.params.id);
   const document = await client.getByID(req.params.id);
   res.render("detail", { document });
 });
 
 app.get("/create", (req, res) => {
   res.render("create", {});
+});
+
+app.get("/search", async (req, res) => {
+  const document = await client.getAllByType("persoon");
+  let docenten = [];
+  document.forEach((docent) => {
+    if (docent.data.naam[0].text.toLowerCase().includes(req.query.q)) {
+      docenten.push({
+        docent: docent,
+      });
+    }
+  });
+  console.log(docenten);
+  res.render("search", { docenten });
 });
 
 // Listen to application port.
