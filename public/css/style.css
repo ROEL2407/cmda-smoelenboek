@@ -17,8 +17,6 @@ a {
 
   display: flex;
   flex-direction: column;
-  max-width: 10em;
-  text-align: center;
 }
 
 button {
@@ -53,7 +51,7 @@ header h2 {
 }
 
 main {
-  margin: 1em;
+  margin: 2em 1em 1em 1em;
 }
 
 main h2 {
@@ -69,6 +67,8 @@ main h2 {
 }
 
 .docenten a {
+  max-width: 10em;
+  text-align: center;
   margin-left: 0.25em;
 }
 
