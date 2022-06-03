@@ -14,6 +14,7 @@ const options = {
 let today = new Date().toLocaleDateString("nl-NL", options);
 let available = [];
 let unavailable = [];
+let categories = [];
 
 // Set EJS as templating engine
 app.set("view engine", "ejs");
@@ -36,7 +37,13 @@ app.get("/", async (req, res) => {
   const document = await client.getAllByType("persoon");
   available = [];
   unavailable = [];
+
   document.forEach((docent) => {
+    if (!categories.includes(docent.data.specaliteit)) {
+      //  only runs if value not in array
+      categories.push(docent.data.specaliteit);
+    }
+
     if (docent.data.dagen_aanwezig[0].text.toLowerCase().includes(today)) {
       available.push({
         docent: docent,
@@ -47,12 +54,17 @@ app.get("/", async (req, res) => {
       });
     }
   });
-  res.render("index", { today: available, not_today: unavailable });
+
+  res.render("index", {
+    today: available,
+    not_today: unavailable,
+    categories,
+  });
 });
 
 app.get("/detail/:id", async (req, res) => {
   const document = await client.getByID(req.params.id);
-  res.render("detail", { document });
+  res.render("detail", { document, categories });
 });
 
 app.get("/create", (req, res) => {
@@ -62,6 +74,7 @@ app.get("/create", (req, res) => {
 app.get("/search", async (req, res) => {
   const document = await client.getAllByType("persoon");
   let docenten = [];
+  //get all teachers with search text
   document.forEach((docent) => {
     if (docent.data.naam[0].text.toLowerCase().includes(req.query.q)) {
       docenten.push({
@@ -70,7 +83,27 @@ app.get("/search", async (req, res) => {
     }
   });
   console.log(docenten);
-  res.render("search", { docenten });
+  res.render("search", { docenten, categories });
+});
+
+app.get("/filter", async (req, res) => {
+  const document = await client.getAllByType("persoon");
+  let docenten = [];
+  //get all teachers with chosen category
+  document.forEach((docent) => {
+    if (docent.data.specaliteit.includes(req.query.category)) {
+      console.log("test");
+      docenten.push({
+        docent: docent,
+      });
+    }
+  });
+  console.log(docenten);
+  res.render("filter", {
+    docenten,
+    title: req.query.category,
+    categories,
+  });
 });
 
 // Listen to application port.
