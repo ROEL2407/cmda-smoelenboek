@@ -1,0 +1,7 @@
+<form method="get" action="/filter">
+  <select id="category" name="category" onchange="this.form.submit()">
+    <% categories.forEach(category => { %>
+    <option name="q" value="<%- category -%>"><%- category -%></option>
+    <% }) %>
+  </select>
+</form>
