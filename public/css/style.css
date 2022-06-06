@@ -145,6 +145,23 @@ h3 {
   margin-top: 1em;
 }
 
+.relatedTeachers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 20em;
+  align-content: flex-start;
+}
+
+.relatedTeachersTitle {
+  text-align: center;
+  width: 100%;
+}
+
+.teacherLink h3 {
+  text-align: center;
+  padding-bottom: 2em;
+}
 
 /*POP-UP*/
 .pop-up {
@@ -177,12 +194,12 @@ button.close {
 
 .close div {
   position: absolute;
-    height: 1.625em;
-    width: 2px;
-    margin: 0;
-    background-color: black;
-    left: 50%;
-    top: 20%;
+  height: 1.625em;
+  width: 2px;
+  margin: 0;
+  background-color: black;
+  left: 50%;
+  top: 20%;
 }
 
 .close div:first-of-type {
@@ -201,4 +218,3 @@ button.close {
 .popupWrapper .teacher {
   max-width: 20em;
 }
-
