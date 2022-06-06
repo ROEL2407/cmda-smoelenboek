@@ -6,6 +6,7 @@ import { client } from "./config/prismicConfig.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
+var router = express.Router();
 
 const options = {
   weekday: "long",
@@ -31,7 +32,18 @@ app.use((req, res, next) => {
   next();
 });
 
-// Query for the root path.
+// Routes
+// Get our route file
+// var postsRouter = require("./routes/homeRoute");
+// const birds = require("./routes/homeRoute");
+// import { homeRoute } from "./routes/homeRoute.js";
+// app.use("/", homeRoute);
+
+// import { detailRoute } from "./routes/detailRoute.js";
+// app.use("/detail", detailRoute);
+
+// router.route("/").get(homeRoute);
+// // Query for the root path.
 app.get("/", async (req, res) => {
   // Here we are retrieving the first document from your API endpoint
   const document = await client.getAllByType("persoon");
@@ -63,7 +75,22 @@ app.get("/", async (req, res) => {
 
 app.get("/detail/:id", async (req, res) => {
   const document = await client.getByID(req.params.id);
-  res.render("detail", { document, categories });
+  // console.log(document.data.specaliteit);
+  const teachers = await client.getAllByType("persoon");
+  let relatedTeachers = [];
+  teachers.forEach((docent) => {
+    if (docent.data.naam[0].text !== document.data.naam[0].text) {
+      console.log(docent.data.naam[0].text);
+      console.log(document.data.naam[0].text);
+      if (document.data.specaliteit == docent.data.specaliteit) {
+        relatedTeachers.push({
+          docent: docent,
+        });
+      }
+    }
+  });
+
+  res.render("detail", { document, categories, teachers: relatedTeachers });
 });
 
 app.get("/create", (req, res) => {
