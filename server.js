@@ -13,8 +13,7 @@ const options = {
 };
 
 let today = new Date().toLocaleDateString("nl-NL", options);
-let available = [];
-let unavailable = [];
+let docenten = [];
 let categories = [];
 
 // Set EJS as templating engine
@@ -47,28 +46,15 @@ app.use((req, res, next) => {
 app.get("/", async (req, res) => {
   // Here we are retrieving the first document from your API endpoint
   const document = await client.getAllByType("persoon");
-  available = [];
-  unavailable = [];
   document.forEach((docent) => {
     if (!categories.includes(docent.data.specaliteit)) {
       //  only runs if value not in array
       categories.push(docent.data.specaliteit);
     }
-
-    if (docent.data.dagen_aanwezig[0].text.toLowerCase().includes(today)) {
-      available.push({
-        docent: docent,
-      });
-    } else {
-      unavailable.push({
-        docent: docent,
-      });
-    }
   });
 
   res.render("index", {
-    today: available,
-    not_today: unavailable,
+    docenten: document,
     categories,
   });
 });
