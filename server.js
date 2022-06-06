@@ -37,7 +37,6 @@ app.get("/", async (req, res) => {
   const document = await client.getAllByType("persoon");
   available = [];
   unavailable = [];
-
   document.forEach((docent) => {
     if (!categories.includes(docent.data.specaliteit)) {
       //  only runs if value not in array
@@ -92,13 +91,11 @@ app.get("/filter", async (req, res) => {
   //get all teachers with chosen category
   document.forEach((docent) => {
     if (docent.data.specaliteit.includes(req.query.category)) {
-      console.log("test");
       docenten.push({
         docent: docent,
       });
     }
   });
-  console.log(docenten);
   res.render("filter", {
     docenten,
     title: req.query.category,
