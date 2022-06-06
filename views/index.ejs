@@ -13,11 +13,9 @@
       include("./components/filter.ejs") -%>
     </header>
     <main>
-      <section id="aanwezig">
-        <h2>Aanwezig</h2>
         <section class="docenten">
           <% today.forEach(teacher => { %>
-          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+          <a href="" class="teacherLink">
             <div class="images">
               <% if(teacher.docent.data.frame !== null){ %>
               <img
@@ -29,12 +27,45 @@
             </div>
             <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
           </a>
+          
+          <div class="pop-up hidden">
+            <button class="close">
+              <div></div>
+              <div></div>
+            </button>
+            <h2><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h2>
+            <div class="popupWrapper">
+            <div class="images">
+              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+            </div>
+              <div id="info">
+                <% if(teacher.docent.data.vakken.length > 0){ %>
+                <h3>Vakken</h3>
+                <p><%- teacher.docent.data.vakken[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.email.length > 0){ %>
+                <h3>Email</h3>
+                <p><%- teacher.docent.data.email[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.beschrijving.length > 0){ %>
+                <h3>Beschrijving</h3>
+                <p><%- teacher.docent.data.beschrijving[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.hobbies.length > 0){ %>
+                <h3>Hobbies</h3>
+                <p><%- teacher.docent.data.hobbies[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.dagen_aanwezig.length > 0){ %>
+                <h3>Aanwezig</h3>
+                <p><%- teacher.docent.data.dagen_aanwezig[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.leuk_feitje.length > 0){ %>
+                <h3>Feitje</h3>
+                <p><%- teacher.docent.data.leuk_feitje[0].text -%><% } %></p>
+              </div>
+            </div>
+          </div>
           <% }) %>
-        </section>
-      </section>
-      <section id="afwezig">
-        <h2>Afwezig</h2>
-        <section class="docenten">
           <% not_today.forEach(teacher => { %>
           <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
             <div class="images">
@@ -48,9 +79,46 @@
             </div>
             <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
           </a>
+          
+          <div class="pop-up hidden">
+            <button class="close">
+              <div></div>
+              <div></div>
+            </button>
+            <h2><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h2>
+            <div class="popupWrapper">
+            <div class="images">
+              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+            </div>
+              <div id="info">
+                <% if(teacher.docent.data.vakken.length > 0){ %>
+                <h3>Vakken</h3>
+                <p><%- teacher.docent.data.vakken[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.email.length > 0){ %>
+                <h3>Email</h3>
+                <p><%- teacher.docent.data.email[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.beschrijving.length > 0){ %>
+                <h3>Beschrijving</h3>
+                <p><%- teacher.docent.data.beschrijving[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.hobbies.length > 0){ %>
+                <h3>Hobbies</h3>
+                <p><%- teacher.docent.data.hobbies[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.dagen_aanwezig.length > 0){ %>
+                <h3>Aanwezig</h3>
+                <p><%- teacher.docent.data.dagen_aanwezig[0].text -%><% } %></p>
+      
+                <% if(teacher.docent.data.leuk_feitje.length > 0){ %>
+                <h3>Feitje</h3>
+                <p><%- teacher.docent.data.leuk_feitje[0].text -%><% } %></p>
+              </div>
+            </div>
+          </div>
           <% }) %>
         </section>
-      </section>
     </main>
     <footer></footer>
     <script src="/js/client.js"></script>

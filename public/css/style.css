@@ -144,3 +144,61 @@ form label {
 h3 {
   margin-top: 1em;
 }
+
+
+/*POP-UP*/
+.pop-up {
+  position: absolute;
+  min-width: 50vw;
+  min-height: 55vh;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0px 10px 18px #000;
+  padding: 2em;
+  border-radius: 1em;
+}
+
+.pop-up.hidden {
+  display: none;
+}
+
+button.close {
+  z-index: 3000;
+  display: flex;
+  align-self: flex-end;
+  position: relative;
+  height: 2em;
+  width: 2em;
+  border: none;
+  background-color: transparent;
+  margin-right: 0.625em;
+  cursor: pointer;
+}
+
+.close div {
+  position: absolute;
+    height: 1.625em;
+    width: 2px;
+    margin: 0;
+    background-color: black;
+    left: 50%;
+    top: 20%;
+}
+
+.close div:first-of-type {
+  transform: rotate(45deg);
+}
+
+.close div:last-of-type {
+  transform: rotate(135deg);
+}
+
+.popupWrapper {
+  display: flex;
+  text-align: left;
+}
+
+.popupWrapper .teacher {
+  max-width: 20em;
+}
+
