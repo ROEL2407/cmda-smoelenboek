@@ -76,6 +76,19 @@ main h2 {
   padding-top: 0.25em;
 }
 
+#keyboardWrapper {
+  position: fixed;
+  width: 100vw;
+  bottom: 0em;
+  z-index: 4;
+  display: none;
+}
+
+#keyboard {
+  max-width: 75%;
+  margin: 0em auto;
+}
+
 /* Create page */
 
 #create_form {

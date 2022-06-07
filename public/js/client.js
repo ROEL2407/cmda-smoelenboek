@@ -18,3 +18,32 @@ closes.forEach(close => {
         })
     })
 })
+
+/* keyboard voor zoekveld */
+
+const Keyboard = window.SimpleKeyboard.default;
+
+const keyboardSimple = document.getElementById("keyboard");
+const keyboardWrapper = document.getElementById("keyboardWrapper");
+const keyboardBackground = document.getElementById("keyboard-bg");
+
+console.log(keyboardWrapper);
+
+const keyboard = new Keyboard({
+  onChange: (input) => onChange(input),
+  onKeyPress: (button) => onKeyPress(button),
+});
+
+
+document.getElementById("zoek").addEventListener("click", (d) => {
+    keyboardWrapper.style.display = "block";
+});
+
+function onChange(input) {
+  document.querySelector(".input").value = input;
+  console.log("Input changed", input);
+}
+
+function onKeyPress(button) {
+  console.log("Button pressed", button);
+}
