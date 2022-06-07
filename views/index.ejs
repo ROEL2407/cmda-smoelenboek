@@ -36,7 +36,10 @@
             <div></div>
             <div></div>
           </button>
-          <h2><%- ctx.prismicH.asText(teacher.data.naam) %></h2>
+          <h2>
+            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+            ctx.prismicH.asText(teacher.data.achternaam) %>
+          </h2>
           <div class="popupWrapper">
             <div class="images">
               <img class="teacher" src="<%- teacher.data.foto.url %>" />
