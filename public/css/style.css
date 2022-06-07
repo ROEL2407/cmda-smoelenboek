@@ -218,3 +218,12 @@ button.close {
 .popupWrapper .teacher {
   max-width: 20em;
 }
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.closeButton {
+  padding-left: 0.5em;
+}
