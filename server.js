@@ -14,7 +14,7 @@ const options = {
 
 let today = new Date().toLocaleDateString("nl-NL", options);
 let docenten = [];
-let categories = [];
+// let categories = [];
 
 // Set EJS as templating engine
 app.set("view engine", "ejs");
@@ -32,88 +32,18 @@ app.use((req, res, next) => {
 });
 
 // Routes
-// Get our route file
-// var postsRouter = require("./routes/homeRoute");
-// const birds = require("./routes/homeRoute");
-// import { homeRoute } from "./routes/homeRoute.js";
-// app.use("/", homeRoute);
+import { homeRoute } from "./routes/homeRoute.js";
+import { detailRoute } from "./routes/detailRoute.js";
+import { searchRoute } from "./routes/searchRoute.js";
+import { filterRoute } from "./routes/filterRoute.js";
 
-// import { detailRoute } from "./routes/detailRoute.js";
-// app.use("/detail", detailRoute);
-
-// router.route("/").get(homeRoute);
-// // Query for the root path.
-app.get("/", async (req, res) => {
-  // Here we are retrieving the first document from your API endpoint
-  const document = await client.getAllByType("persoon");
-  document.forEach((docent) => {
-    if (!categories.includes(docent.data.specaliteit)) {
-      //  only runs if value not in array
-      categories.push(docent.data.specaliteit);
-    }
-  });
-
-  res.render("index", {
-    docenten: document,
-    categories,
-  });
-});
-
-app.get("/detail/:id", async (req, res) => {
-  const document = await client.getByID(req.params.id);
-  // console.log(document.data.specaliteit);
-  const teachers = await client.getAllByType("persoon");
-  let relatedTeachers = [];
-  teachers.forEach((docent) => {
-    if (docent.data.naam[0].text !== document.data.naam[0].text) {
-      console.log(docent.data.naam[0].text);
-      console.log(document.data.naam[0].text);
-      if (document.data.specaliteit == docent.data.specaliteit) {
-        relatedTeachers.push({
-          docent: docent,
-        });
-      }
-    }
-  });
-
-  res.render("detail", { document, categories, teachers: relatedTeachers });
-});
+app.use("/", homeRoute);
+app.use("/detail", detailRoute);
+app.use("/search", searchRoute);
+app.use("/filter", filterRoute);
 
 app.get("/create", (req, res) => {
   res.render("create", {});
-});
-
-app.get("/search", async (req, res) => {
-  const document = await client.getAllByType("persoon");
-  let docenten = [];
-  //get all teachers with search text
-  document.forEach((docent) => {
-    if (docent.data.naam[0].text.toLowerCase().includes(req.query.q)) {
-      docenten.push({
-        docent: docent,
-      });
-    }
-  });
-  console.log(docenten);
-  res.render("search", { docenten, categories });
-});
-
-app.get("/filter", async (req, res) => {
-  const document = await client.getAllByType("persoon");
-  let docenten = [];
-  //get all teachers with chosen category
-  document.forEach((docent) => {
-    if (docent.data.specaliteit.includes(req.query.category)) {
-      docenten.push({
-        docent: docent,
-      });
-    }
-  });
-  res.render("filter", {
-    docenten,
-    title: req.query.category,
-    categories,
-  });
 });
 
 // Listen to application port.
