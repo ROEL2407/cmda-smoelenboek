@@ -1,8 +1,8 @@
 <form method="get" action="/filter">
   <select id="category" name="category" onchange="this.form.submit()">
     <option value="" disabled selected>Specaliteit</option>
-    <% categories.forEach(category => { %>
-    <option value="<%- category -%>"><%- category -%></option>
-    <% }) %>
+    <option value="UI">UI</option>
+    <option value="UX">UX</option>
+    <option value="Tech">Tech</option>
   </select>
 </form>
