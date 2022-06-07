@@ -13,6 +13,16 @@ filterRoute.get("/", async (req, res) => {
       });
     }
   });
+  console.log(docenten);
+  //   sort on last name
+  docenten.sort((a, b) =>
+    a.docent.data.achternaam[0].text > b.docent.data.achternaam[0].text
+      ? 1
+      : b.docent.data.achternaam[0].text > a.docent.data.achternaam[0].text
+      ? -1
+      : 0
+  );
+
   res.render("filter", {
     docenten,
     title: req.query.category,
