@@ -9,8 +9,11 @@
         <h1>CMDA Smoelenboek</h1>
         <h2>Ontmoet alle docenten</h2>
       </a>
-      <%- include("./components/search.ejs") -%> <%-
-      include("./components/filter.ejs") -%>
+      <%- include("./components/search.ejs") -%>
+      <div class="filter">
+        <%- include("./components/filter.ejs") -%>
+        <a href="/" class="closeButton"> x</a>
+      </div>
     </header>
     <main>
       <h2><%-title-%> docenten</h2>
