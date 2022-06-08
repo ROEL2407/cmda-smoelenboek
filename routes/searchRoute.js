@@ -13,6 +13,5 @@ searchRoute.get("/", async (req, res) => {
       });
     }
   });
-  console.log(docenten);
   res.render("search", { docenten });
 });
