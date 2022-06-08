@@ -38,12 +38,17 @@ import { searchRoute } from "./routes/searchRoute.js";
 import { filterRoute } from "./routes/filterRoute.js";
 
 app.use("/", homeRoute);
+app.use("/overview", homeRoute);
 app.use("/detail", detailRoute);
 app.use("/search", searchRoute);
 app.use("/filter", filterRoute);
 
 app.get("/create", (req, res) => {
   res.render("create", {});
+});
+
+app.get("/overview", (req, res) => {
+  res.render("overview", {});
 });
 
 // Listen to application port.
