@@ -4,14 +4,6 @@
     <%- include("./components/head.ejs") -%>
   </head>
   <body>
-    <header>
-      <a href="/">
-        <h1>CMDA Smoelenboek</h1>
-        <h2>Ontmoet alle docenten</h2>
-      </a>
-      <%- include("./components/search.ejs") -%> <%-
-      include("./components/filter.ejs") -%>
-    </header>
     <main>
       <section class="docenten">
         <% docenten.forEach(teacher => { %>
@@ -29,7 +21,10 @@
         </a>
         <% }) %>
       </section>
+      <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer></footer>
+    <footer><%- include("./components/footer.ejs") -%></footer>
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+    <script src="/js/client.js"></script>
   </body>
 </html>
