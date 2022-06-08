@@ -1,23 +1,33 @@
 const links = document.querySelectorAll(".teacherLink");
 const closes = document.querySelectorAll(".close");
 const pop_ups = document.querySelectorAll(".pop-up");
-console.log(pop_ups);
+// console.log(pop_ups);
 
-links.forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
-        this.nextElementSibling.classList.remove("hidden");  
-    })
-})
+// scroll to top content
+if (window.location.pathname === "/") {
+  window.onload = () => {
+    window.scrollTo({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
+}
 
-closes.forEach(close => {
-    close.addEventListener("click", function(event) {
-        event.preventDefault();
-        pop_ups.forEach(pop_up => {
-                pop_up.classList.add("hidden");
-        })
-    })
-})
+links.forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    this.nextElementSibling.classList.remove("hidden");
+  });
+});
+
+closes.forEach((close) => {
+  close.addEventListener("click", function (event) {
+    event.preventDefault();
+    pop_ups.forEach((pop_up) => {
+      pop_up.classList.add("hidden");
+    });
+  });
+});
 
 /* keyboard voor zoekveld */
 
@@ -34,9 +44,8 @@ const keyboard = new Keyboard({
   onKeyPress: (button) => onKeyPress(button),
 });
 
-
 document.getElementById("zoek").addEventListener("click", (d) => {
-    keyboardWrapper.style.display = "block";
+  keyboardWrapper.style.display = "block";
 });
 
 function onChange(input) {
@@ -46,4 +55,19 @@ function onChange(input) {
 
 function onKeyPress(button) {
   console.log("Button pressed", button);
+}
+
+// Scroll
+function up() {
+  document.querySelector("html").scrollBy({
+    top: -220,
+    behavior: "smooth",
+  });
+}
+
+function down() {
+  document.querySelector("html").scrollBy({
+    top: 220,
+    behavior: "smooth",
+  });
 }
