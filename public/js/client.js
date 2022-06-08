@@ -12,6 +12,33 @@ if (window.location.pathname === "/") {
     });
   };
 }
+// scroll to top content
+if (window.location.pathname === "/overview") {
+  window.onload = () => {
+    window.scrollTo({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
+}
+// scroll to top content
+if (window.location.pathname === "/search") {
+  window.onload = () => {
+    window.scrollTo({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
+}
+// scroll to top content
+if (window.location.pathname === "/filter") {
+  window.onload = () => {
+    window.scrollTo({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
+}
 
 links.forEach((link) => {
   link.addEventListener("click", function (event) {
