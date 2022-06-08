@@ -32,15 +32,15 @@ body {
   font-family: "OpenSans", sans-serif;
 }
 
-header {
+/* header {
   background-color: #ffcc00;
   background-image: url("../images/icons.png");
   text-align: center;
   font-weight: bold;
   padding: 1em 0em;
-}
+} */
 
-header h1,
+/* header h1,
 header h2 {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
@@ -48,7 +48,7 @@ header h2 {
   width: 25%;
   margin: 0em auto;
   background-color: rgba(0, 0, 0, 0.5);
-}
+} */
 
 main {
   margin: 2em 1em 1em 1em;
@@ -58,12 +58,32 @@ main h2 {
   margin: 1em 0em;
 }
 
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  height: 3em;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffcc00;
+  color: white;
+  text-align: center;
+  z-index: 3;
+}
+
+footer form input {
+  margin-bottom: 0;
+}
+
 /* Home page / smoelenboek overzicht */
 .docenten {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: 35em;
 }
 
 .docenten a {
@@ -79,7 +99,7 @@ main h2 {
 #keyboardWrapper {
   position: fixed;
   width: 100vw;
-  bottom: 0em;
+  bottom: 3em;
   z-index: 4;
   display: none;
 }
