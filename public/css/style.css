@@ -51,23 +51,24 @@ header h2 {
 } */
 
 main {
-  margin: 2em 1em 1em 1em;
+  margin: 2em 1em 3em 1em;
 }
 
 main h2 {
   margin: 1em 0em;
+  width: 100%;
 }
 
 footer {
   position: fixed;
   display: flex;
   justify-content: space-evenly;
-  height: 3em;
+  height: 4em;
   align-items: center;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #ffcc00;
+  background-color: #fef01f;
   color: white;
   text-align: center;
   z-index: 3;
@@ -75,6 +76,9 @@ footer {
 
 footer form input {
   margin-bottom: 0;
+  padding: 0.75em;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid black;
 }
 
 /* Home page / smoelenboek overzicht */
@@ -99,7 +103,7 @@ footer form input {
 #keyboardWrapper {
   position: fixed;
   width: 100vw;
-  bottom: 3em;
+  bottom: 4em;
   z-index: 4;
   display: none;
 }
@@ -259,4 +263,27 @@ button.close {
 }
 .closeButton {
   padding-left: 0.5em;
+}
+
+.submitButton,
+.scrollButton {
+  background-color: rgb(0, 0, 0);
+  font-size: 13px;
+  box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
+  color: #ffffff;
+  font-family: "OpenSans";
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 1em;
+  position: relative;
+  text-transform: uppercase;
+  border-radius: 5px 5px 5px 5px;
+  border: none;
+}
+
+#category {
+  padding: 0.75em;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid black;
 }
