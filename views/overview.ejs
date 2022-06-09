@@ -10,14 +10,6 @@
     <title>CMDA Smoelenboek</title>
   </head>
   <body>
-    <header>
-      <a href="/">
-        <h1>CMDA Smoelenboek</h1>
-        <h2>Ontmoet alle docenten</h2>
-      </a>
-      <%- include("./components/search.ejs") -%> <%-
-      include("./components/filter.ejs") -%>
-    </header>
     <main>
       <section class="docenten">
         <% docenten.forEach(teacher => { %>
@@ -77,8 +69,7 @@
             </div>
           </div>
         </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
+        <% }) %> <% docenten.forEach(teacher => { %>
         <a href="" class="teacherLink">
           <div class="images">
             <% if(teacher.data.frame !== null){ %>
@@ -135,8 +126,7 @@
             </div>
           </div>
         </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
+        <% }) %> <% docenten.forEach(teacher => { %>
         <a href="" class="teacherLink">
           <div class="images">
             <% if(teacher.data.frame !== null){ %>
@@ -193,8 +183,7 @@
             </div>
           </div>
         </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
+        <% }) %> <% docenten.forEach(teacher => { %>
         <a href="" class="teacherLink">
           <div class="images">
             <% if(teacher.data.frame !== null){ %>
@@ -251,240 +240,7 @@
             </div>
           </div>
         </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
-        <a href="" class="teacherLink">
-          <div class="images">
-            <% if(teacher.data.frame !== null){ %>
-            <img
-              class="frame"
-              src="/images/frames/<%- teacher.data.frame%>.png"
-            />
-            <% } %>
-            <img class="teacher" src="<%- teacher.data.foto.url %>" />
-          </div>
-          <h3>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h3>
-        </a>
-
-        <div class="pop-up hidden">
-          <button class="close">
-            <div></div>
-            <div></div>
-          </button>
-          <h2>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h2>
-          <div class="popupWrapper">
-            <div class="images">
-              <img class="teacher" src="<%- teacher.data.foto.url %>" />
-            </div>
-            <div id="info">
-              <% if(teacher.data.vakken.length > 0){ %>
-              <h3>Vakken</h3>
-              <p><%- teacher.data.vakken[0].text -%><% } %></p>
-
-              <% if(teacher.data.email.length > 0){ %>
-              <h3>Email</h3>
-              <p><%- teacher.data.email[0].text -%><% } %></p>
-
-              <% if(teacher.data.beschrijving.length > 0){ %>
-              <h3>Beschrijving</h3>
-              <p><%- teacher.data.beschrijving[0].text -%><% } %></p>
-
-              <% if(teacher.data.hobbies.length > 0){ %>
-              <h3>Hobbies</h3>
-              <p><%- teacher.data.hobbies[0].text -%><% } %></p>
-
-              <% if(teacher.data.dagen_aanwezig.length > 0){ %>
-              <h3>Aanwezig</h3>
-              <p><%- teacher.data.dagen_aanwezig[0].text -%><% } %></p>
-
-              <% if(teacher.data.leuk_feitje.length > 0){ %>
-              <h3>Feitje</h3>
-              <p><%- teacher.data.leuk_feitje[0].text -%><% } %></p>
-            </div>
-          </div>
-        </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
-        <a href="" class="teacherLink">
-          <div class="images">
-            <% if(teacher.data.frame !== null){ %>
-            <img
-              class="frame"
-              src="/images/frames/<%- teacher.data.frame%>.png"
-            />
-            <% } %>
-            <img class="teacher" src="<%- teacher.data.foto.url %>" />
-          </div>
-          <h3>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h3>
-        </a>
-
-        <div class="pop-up hidden">
-          <button class="close">
-            <div></div>
-            <div></div>
-          </button>
-          <h2>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h2>
-          <div class="popupWrapper">
-            <div class="images">
-              <img class="teacher" src="<%- teacher.data.foto.url %>" />
-            </div>
-            <div id="info">
-              <% if(teacher.data.vakken.length > 0){ %>
-              <h3>Vakken</h3>
-              <p><%- teacher.data.vakken[0].text -%><% } %></p>
-
-              <% if(teacher.data.email.length > 0){ %>
-              <h3>Email</h3>
-              <p><%- teacher.data.email[0].text -%><% } %></p>
-
-              <% if(teacher.data.beschrijving.length > 0){ %>
-              <h3>Beschrijving</h3>
-              <p><%- teacher.data.beschrijving[0].text -%><% } %></p>
-
-              <% if(teacher.data.hobbies.length > 0){ %>
-              <h3>Hobbies</h3>
-              <p><%- teacher.data.hobbies[0].text -%><% } %></p>
-
-              <% if(teacher.data.dagen_aanwezig.length > 0){ %>
-              <h3>Aanwezig</h3>
-              <p><%- teacher.data.dagen_aanwezig[0].text -%><% } %></p>
-
-              <% if(teacher.data.leuk_feitje.length > 0){ %>
-              <h3>Feitje</h3>
-              <p><%- teacher.data.leuk_feitje[0].text -%><% } %></p>
-            </div>
-          </div>
-        </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
-        <a href="" class="teacherLink">
-          <div class="images">
-            <% if(teacher.data.frame !== null){ %>
-            <img
-              class="frame"
-              src="/images/frames/<%- teacher.data.frame%>.png"
-            />
-            <% } %>
-            <img class="teacher" src="<%- teacher.data.foto.url %>" />
-          </div>
-          <h3>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h3>
-        </a>
-
-        <div class="pop-up hidden">
-          <button class="close">
-            <div></div>
-            <div></div>
-          </button>
-          <h2>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h2>
-          <div class="popupWrapper">
-            <div class="images">
-              <img class="teacher" src="<%- teacher.data.foto.url %>" />
-            </div>
-            <div id="info">
-              <% if(teacher.data.vakken.length > 0){ %>
-              <h3>Vakken</h3>
-              <p><%- teacher.data.vakken[0].text -%><% } %></p>
-
-              <% if(teacher.data.email.length > 0){ %>
-              <h3>Email</h3>
-              <p><%- teacher.data.email[0].text -%><% } %></p>
-
-              <% if(teacher.data.beschrijving.length > 0){ %>
-              <h3>Beschrijving</h3>
-              <p><%- teacher.data.beschrijving[0].text -%><% } %></p>
-
-              <% if(teacher.data.hobbies.length > 0){ %>
-              <h3>Hobbies</h3>
-              <p><%- teacher.data.hobbies[0].text -%><% } %></p>
-
-              <% if(teacher.data.dagen_aanwezig.length > 0){ %>
-              <h3>Aanwezig</h3>
-              <p><%- teacher.data.dagen_aanwezig[0].text -%><% } %></p>
-
-              <% if(teacher.data.leuk_feitje.length > 0){ %>
-              <h3>Feitje</h3>
-              <p><%- teacher.data.leuk_feitje[0].text -%><% } %></p>
-            </div>
-          </div>
-        </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
-        <a href="" class="teacherLink">
-          <div class="images">
-            <% if(teacher.data.frame !== null){ %>
-            <img
-              class="frame"
-              src="/images/frames/<%- teacher.data.frame%>.png"
-            />
-            <% } %>
-            <img class="teacher" src="<%- teacher.data.foto.url %>" />
-          </div>
-          <h3>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h3>
-        </a>
-
-        <div class="pop-up hidden">
-          <button class="close">
-            <div></div>
-            <div></div>
-          </button>
-          <h2>
-            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>
-          </h2>
-          <div class="popupWrapper">
-            <div class="images">
-              <img class="teacher" src="<%- teacher.data.foto.url %>" />
-            </div>
-            <div id="info">
-              <% if(teacher.data.vakken.length > 0){ %>
-              <h3>Vakken</h3>
-              <p><%- teacher.data.vakken[0].text -%><% } %></p>
-
-              <% if(teacher.data.email.length > 0){ %>
-              <h3>Email</h3>
-              <p><%- teacher.data.email[0].text -%><% } %></p>
-
-              <% if(teacher.data.beschrijving.length > 0){ %>
-              <h3>Beschrijving</h3>
-              <p><%- teacher.data.beschrijving[0].text -%><% } %></p>
-
-              <% if(teacher.data.hobbies.length > 0){ %>
-              <h3>Hobbies</h3>
-              <p><%- teacher.data.hobbies[0].text -%><% } %></p>
-
-              <% if(teacher.data.dagen_aanwezig.length > 0){ %>
-              <h3>Aanwezig</h3>
-              <p><%- teacher.data.dagen_aanwezig[0].text -%><% } %></p>
-
-              <% if(teacher.data.leuk_feitje.length > 0){ %>
-              <h3>Feitje</h3>
-              <p><%- teacher.data.leuk_feitje[0].text -%><% } %></p>
-            </div>
-          </div>
-        </div>
-        <% }) %>
-        <% docenten.forEach(teacher => { %>
+        <% }) %> <% docenten.forEach(teacher => { %>
         <a href="" class="teacherLink">
           <div class="images">
             <% if(teacher.data.frame !== null){ %>
@@ -543,11 +299,9 @@
         </div>
         <% }) %>
       </section>
-      <section id="keyboardWrapper">
-        <div class="simple-keyboard" id="keyboard"></div>
-      </section>
+      <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer></footer>
+    <footer><%- include("./components/footer.ejs") -%></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
     <script src="/js/client.js"></script>
