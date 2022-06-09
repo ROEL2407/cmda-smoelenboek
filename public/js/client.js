@@ -11,7 +11,7 @@ if (
 ) {
   window.onload = () => {
     window.scrollTo({
-      top: 500,
+      top: 520,
       behavior: "smooth",
     });
   };
