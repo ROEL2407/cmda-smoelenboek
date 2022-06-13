@@ -6,8 +6,8 @@
   <body>
     <main>
       <section class="allTeachers">
+        <h2><%-title-%> docenten</h2>
         <section class="docenten">
-          <h2><%-title-%> docenten</h2>
           <% docenten.forEach(teacher => { %>
           <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
             <div class="images">
