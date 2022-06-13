@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/head.ejs") -%>
+  </head>
+  <body>
+    <main>
+      <section class="allTeachers">
+        <% docenten.forEach(groups => { %>
+        <h2><%- groups.group-%></h2>
+        <section class="docenten">
+          <% groups.children.forEach(teacher => { %>
+          <a href="" class="teacherLink">
+            <div class="images">
+              <% if(teacher.data.frame !== null){ %>
+              <img
+                class="frame"
+                src="/images/frames/<%- teacher.data.frame%>.png"
+              />
+              <% } %>
+              <img class="teacher" src="<%- teacher.data.foto.url %>" />
+            </div>
+            <h3>
+              <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.data.achternaam) %>
+            </h3>
+          </a>
+          <% }) %>
+        </section>
+      </section>
+      <% }) %> <%- include("./components/keyboard.ejs") -%>
+    </main>
+    <footer><%- include("./components/footer.ejs") -%></footer>
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+    <script src="/js/client.js"></script>
+  </body>
+</html>
