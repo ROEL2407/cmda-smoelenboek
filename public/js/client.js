@@ -5,6 +5,7 @@ const pop_ups = document.querySelectorAll(".pop-up");
 // scroll to top content
 if (
   window.location.pathname === "/" ||
+  window.location.pathname === "/catalog" ||
   window.location.pathname === "/overview" ||
   window.location.pathname === "/search" ||
   window.location.pathname === "/filter"
