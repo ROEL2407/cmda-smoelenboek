@@ -5,21 +5,23 @@
   </head>
   <body>
     <main>
-      <section class="docenten">
-        <% docenten.forEach(teacher => { %>
-        <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
-          <div class="images">
-            <% if(teacher.docent.data.frame !== null){ %>
-            <img
-              class="frame"
-              src="/images/frames/<%- teacher.docent.data.frame%>.png"
-            />
-            <% } %>
-            <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
-          </div>
-          <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
-        </a>
-        <% }) %>
+      <section class="allTeachers">
+        <section class="docenten">
+          <% docenten.forEach(teacher => { %>
+          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+            <div class="images">
+              <% if(teacher.docent.data.frame !== null){ %>
+              <img
+                class="frame"
+                src="/images/frames/<%- teacher.docent.data.frame%>.png"
+              />
+              <% } %>
+              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+            </div>
+            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
+          </a>
+          <% }) %>
+        </section>
       </section>
       <%- include("./components/keyboard.ejs") -%>
     </main>
