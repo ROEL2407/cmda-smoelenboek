@@ -32,26 +32,8 @@ body {
   font-family: "OpenSans", sans-serif;
 }
 
-/* header {
-  background-color: #ffcc00;
-  background-image: url("../images/icons.png");
-  text-align: center;
-  font-weight: bold;
-  padding: 1em 0em;
-} */
-
-/* header h1,
-header h2 {
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
-  color: #fff;
-  width: 25%;
-  margin: 0em auto;
-  background-color: rgba(0, 0, 0, 0.5);
-} */
-
 main {
-  margin: 2em 1em 3em 1em;
+  margin: 2em 1em 6em 1em;
 }
 
 main h2 {
@@ -144,13 +126,11 @@ form label {
 /* Detail page */
 .teacherName {
   text-align: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 2em;
 }
 
 .teacherImage {
-  /* max-width: 100%;
-  width: 50%; */
-  max-height: 20em;
+  max-height: 13em;
 }
 
 .teacherInfo {
@@ -161,6 +141,10 @@ form label {
 
 .teacherDetail {
   max-width: 50%;
+}
+
+.teacherDetail h3:first-of-type {
+  margin-top: 2em;
 }
 
 .frame {
@@ -186,16 +170,14 @@ h3 {
 }
 
 .relatedTeachers {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 20em;
-  align-content: flex-start;
+  display: grid;
+  grid-template-rows: repeat(4, 10em);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .relatedTeachersTitle {
   text-align: center;
-  width: 100%;
+  grid-column: 1 / -1;
 }
 
 .teacherLink h3 {
