@@ -30,10 +30,12 @@
       </section>
       <% }) %> <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer>
-      <% letters.forEach(letter => { %>
-      <a href="#<%- letter -%>"> <%- letter -%> </a>
-      <% }) %>
+    <footer class="footerCat">
+      <section class="letters">
+        <% letters.forEach(letter => { %>
+        <a href="#<%- letter -%>"> <%- letter -%> </a>
+        <% }) %>
+      </section>
       <nav>
         <button class="scrollButton" onClick="up()">▲ Omhoog</button>
         <button class="scrollButton" onClick="down()">▼ Omlaag</button>
