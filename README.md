@@ -1,11 +1,17 @@
-# CMDA Smoelenboek
-
-<!--![CMDA Smoelenboek](...)-->
+# Design Rationale CMDA Smoelenboek
 
 ## Inhoudsopgave
-  * [Debrief](#Debrief)
-
+  * [Debrief](#Debrief)<br />
+  * [Probleem definitie](#Probleem-definitie)<br />
+  * [Design challenge](#Design-challenge)<br />
+  * [Oplossing](#Oplossing)<br />
+  * [Gemaakte keuzes](#Gemaakte-keuzes)<br />
+  * [Uitleg van de code](#Uitleg-van-de-code)<br />
+  * [Licentie](#Licentie)
+  
 ## Debrief
+<details open>
+<summary>onze debrief</summary>
 In deze debriefing zullen wij de opdracht en de opdrachtgever in kaart brengen:
 
 ### Contactgegevens
@@ -49,8 +55,39 @@ De website is bedoeld voor studenten en docenten. Met de website kunnen docenten
 
 ### Relatie met andere projecten
 Het project is onderdeel van de HvA. 
+</details>
 
 
+## Probleem definitie
+CMD Amsterdam wilt een online smoelenboek. Vroeger voor corona hingen er fysieke afbeeldingen naast de deuren van de kamers. Op deze afbeeldingen  stonden de gezichten van de docenten met hun naam. Deze hingen dan bij de kamers van hun vaste plek. Sinds die tijd is CMD gegroeid en hebben de docenten niet meer een vaste plek waar ze zitten als ze geen les geven. Hierdoor zijn dus ook de afbeeldingen naast de kamers verdwenen.
+
+CMD, met name Vasilis van Gemert en Brit Wijnmaalen, zijn dus nu op zoek om dezelfde fijne sfeer terug te krijgen. De sfeer dat je als student gewoon bij docenten aan kon kloppen voor vragen. Hierbij kunnen de docenten ook extra informatie over zichzelf delen om ook op andere vlakken met studenten of andere docenten te kunnen connecten.
+
+### User stories
+Met dit online smoelenboek gaan wij proberen de volgende user stories te behalen.
+
+1. Docent opzoeken
+
+Als student, wil ik snel een naam bij een gezicht kunnen vinden, zodat ik weet hoe mijn docent er uitziet/ook al weer heet.
+
+2. Connectie met docent maken
+
+Als docent, wil ik snel meer weten over collega’s, zodat ik interessantere connecties weet te leggen
+
+3. Profiel kunnen wijzigen
+
+Als docent, wil ik eenvoudig mijn profiel kunnen wijzigen, zodat ik dat niet op honderd verschillende plekken hoef te doen.
+
+
+## Design Challenge
+De docenten moeten met z'n allen op een heel groot scherm zichtbaar zijn. Je moet kunnen klikken op een foto en dan meer info kunnen lezen. En idealiter zou het gekoppeld moeten zijn aan een bestaande API zodat docenten hun eigen profiel kunnen updaten.
+
+## Oplossing
+
+## Gemaakte keuzes
+
+
+## Uitleg van de code
 
 ## Licentie
 
