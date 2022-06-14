@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("./components/head.ejs") -%>
-</head>
-<body>
-    <header>
-        <h1>CMDA Smoelenboek</h1>
-        <h2>Ontmoet alle docenten</h2>
-    </header>
+  </head>
+  <body>
     <main>
-        <h2>Maak uw pagina aan!</h2>
-        <p>In het formulier kunt u uw Smoelenboek pagina aanmaken, deze zal vervolgens in het overzicht komen.</p>
-        <form id="create_form" action="" method="post">
-            <label for="name">Uw naam:</label>
-            <input type="text" name="name" id="name">
+      <h2>Maak uw pagina aan!</h2>
+      <p>
+        In het formulier kunt u uw Smoelenboek pagina aanmaken, deze zal
+        vervolgens in het overzicht komen.
+      </p>
+      <form id="create_form" action="" method="post">
+        <label for="name">Uw naam:</label>
+        <input type="text" name="name" id="name" />
 
-            <label for="afbeelding">Een afbeelding van u:</label>
-            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+        <label for="afbeelding">Een afbeelding van u:</label>
+        <input
+          type="file"
+          id="avatar"
+          name="avatar"
+          accept="image/png, image/jpeg"
+        />
 
-            <label for="email">Uw email:</label>
-            <input type="text" name="email" id="email">
+        <label for="email">Uw email:</label>
+        <input type="text" name="email" id="email" />
 
-            <label for="vakken">Uw vakken:</label>
-            <input type="text" name="vakken" id="vakken">
+        <label for="vakken">Uw vakken:</label>
+        <input type="text" name="vakken" id="vakken" />
 
-            <label for="telefoonnummer">Uw telefoonnummer:</label>
-            <input type="text" name="telefoonnummer" id="telefoonnummer">
+        <label for="telefoonnummer">Uw telefoonnummer:</label>
+        <input type="text" name="telefoonnummer" id="telefoonnummer" />
 
-            <label for="beschrijving">Een beschrijving van u:</label>
-            <input type="textarea" name="beschrijving" id="beschrijving">
+        <label for="beschrijving">Een beschrijving van u:</label>
+        <input type="textarea" name="beschrijving" id="beschrijving" />
 
-            <label for="aanwezigDagen">Aanwezige dagen:</label>
-            <input type="text" name="aanwezige dagen" id="aanwezigDagen">
+        <label for="aanwezigDagen">Aanwezige dagen:</label>
+        <input type="text" name="aanwezige dagen" id="aanwezigDagen" />
 
-            <label for="hobbies">Wat zijn uw hobbies:</label>
-            <input type="textarea" name="hobbies" id="hobbies">
+        <label for="hobbies">Wat zijn uw hobbies:</label>
+        <input type="textarea" name="hobbies" id="hobbies" />
 
-            <label for="feitje">Een leuk feitje over u:</label>
-            <input type="textarea" name="Leuk feitje" id="feitje">
+        <label for="feitje">Een leuk feitje over u:</label>
+        <input type="textarea" name="Leuk feitje" id="feitje" />
 
-            <fieldset>
-                <p>Kies een border voor om uw afbeelding heen</p>
-                <button class="img_border"><img src="/images/border1.png" alt=""></button>
-            </fieldset>
-        </form>
+        <fieldset>
+          <p>Kies een border voor om uw afbeelding heen</p>
+          <button class="img_border">
+            <img src="/images/border1.png" alt="" />
+          </button>
+        </fieldset>
+      </form>
+      <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer>
-
-    </footer>
-</body>
+    <footer><%- include("./components/footer.ejs") -%></footer>
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+    <script src="/js/client.js"></script>
+  </body>
 </html>

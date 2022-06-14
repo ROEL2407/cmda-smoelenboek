@@ -4,18 +4,13 @@
     <%- include("./components/head.ejs") -%>
   </head>
   <body>
-    <header>
-      <a href="/">
-        <h1>CMDA Smoelenboek</h1>
-        <h2>Ontmoet alle docenten</h2>
-      </a>
-      <%- include("./components/search.ejs") -%> <%-
-      include("./components/filter.ejs") -%>
-    </header>
     <main>
       <section class="teacherInfo">
         <section class="teacherDetail">
-          <h2 class="teacherName"><%- document.data.naam[0].text %></h2>
+          <h2 class="teacherName">
+            <%- document.data.naam[0].text %> <%-
+            document.data.achternaam[0].text %>
+          </h2>
           <img class="teacherImage" src="<%- document.data.foto.url %>" />
           <% if(document.data.vakken.length > 0){ %>
           <h3>Vakken</h3>
@@ -57,12 +52,18 @@
               <% } %>
               <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
             </div>
-            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
+            <h3>
+              <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>
+            </h3>
           </a>
           <% }) %>
         </section>
       </section>
+      <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer></footer>
+    <footer><%- include("./components/footer.ejs") -%></footer>
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+    <script src="/js/client.js"></script>
   </body>
 </html>

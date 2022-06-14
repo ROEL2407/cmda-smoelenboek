@@ -1,0 +1,21 @@
+.docenten {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+  }
+  
+  .docenten a {
+    max-width: 100%;
+    margin-left: 0.5em;
+  }
+  
+  .images {
+    margin-bottom: 0.5em;
+  }
+  
+  .frame {
+    max-width: 83px;
+  }
+  
+  .teacher {
+    max-width: 5em;
+  }
