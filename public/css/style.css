@@ -266,6 +266,22 @@ button.close {
   max-width: 20em;
 }
 
+.popupWrapper .moreInfo {
+  margin: 1em 0em;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
+  color: #ffffff;
+  font-family: "OpenSans";
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 1em;
+  position: relative;
+  text-transform: uppercase;
+  border-radius: 5px 5px 5px 5px;
+  border: none;
+}
+
 .filter {
   display: flex;
   flex-direction: row;
