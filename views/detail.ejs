@@ -42,7 +42,7 @@
           </h2>
           <% teachers.forEach(teacher => { %>
 
-          <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
+          <a href="" class="teacherLink">
             <div class="images">
               <% if(teacher.docent.data.frame !== null){ %>
               <img
@@ -57,6 +57,38 @@
               ctx.prismicH.asText(teacher.docent.data.achternaam) %>
             </h3>
           </a>
+
+          <div class="pop-up hidden">
+            <button class="close">
+              <div></div>
+              <div></div>
+            </button>
+            <h2>
+              <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>
+            </h2>
+            <div class="popupWrapper">
+              <div class="images">
+                <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+              </div>
+              <div id="info">
+                <% if(teacher.docent.data.email.length > 0){ %>
+                <h3>Email</h3>
+                <p><%- teacher.docent.data.email[0].text -%><% } %></p>
+
+                <% if(teacher.docent.data.telefoon_nummer.length > 0){ %>
+                <h3>Telefoonnummer</h3>
+                <p><%- teacher.docent.data.telefoon_nummer[0].text -%><% } %></p>
+
+                <% if(teacher.docent.data.dagen_aanwezig.length > 0){ %>
+                <h3>Aanwezig op</h3>
+                <p><%- teacher.docent.data.dagen_aanwezig[0].text -%><% } %></p>
+
+                <% if(teacher.docent.id){ %>
+                <a class="moreInfo" href="/detail/<%- teacher.docent.id -%>">Meer info<% } %></a>
+              </div>
+            </div>
+          </div>
           <% }) %>
         </section>
       </section>

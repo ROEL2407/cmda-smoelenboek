@@ -18,26 +18,23 @@ if (
   };
 }
 
-if (
-  window.location.pathname === "/" ||
-  window.location.pathname === "/overview"
-) {
-  links.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      this.nextElementSibling.classList.remove("hidden");
-    });
+
+links.forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    this.nextElementSibling.classList.remove("hidden");
   });
+});
 
   closes.forEach((close) => {
-    close.addEventListener("click", function (event) {
-      event.preventDefault();
-      pop_ups.forEach((pop_up) => {
-        pop_up.classList.add("hidden");
-      });
+  close.addEventListener("click", function (event) {
+    event.preventDefault();
+    pop_ups.forEach((pop_up) => {
+      pop_up.classList.add("hidden");
     });
   });
-}
+});
+
 
 /* keyboard voor zoekveld */
 

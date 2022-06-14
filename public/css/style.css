@@ -213,13 +213,16 @@ h3 {
 /*POP-UP*/
 .pop-up {
   position: absolute;
-  min-width: 50vw;
   min-height: 55vh;
   z-index: 10;
   background-color: #fff;
   box-shadow: 0px 10px 18px #000;
   padding: 2em;
   border-radius: 1em;
+}
+
+.searchPop-up {
+  top: 19em;
 }
 
 .pop-up.hidden {
@@ -263,11 +266,15 @@ button.close {
 }
 
 .popupWrapper .teacher {
-  max-width: 20em;
+  max-width: 15em;
+}
+
+.popupWrapper #info {
+  padding: 0em 1em 2em;
 }
 
 .popupWrapper .moreInfo {
-  margin: 1em 0em;
+  margin: 1.5em 0em 1em;
   background-color: rgb(0, 0, 0);
   box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
   color: #ffffff;
