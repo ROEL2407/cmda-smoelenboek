@@ -1,11 +1,17 @@
-# CMDA Smoelenboek
-
-<!--![CMDA Smoelenboek](...)-->
+# Design Rationale CMDA Smoelenboek
 
 ## Inhoudsopgave
-  * [Debrief](#Debrief)
+  * [Debrief](#Debrief)<br />
+  * [Probleem definitie](#Probleem-definitie)<br />
+  * [Design challenge](#Design-challenge)<br />
+  * [Oplossing](#Oplossing)<br />
+  * [Gemaakte keuzes](#Gemaakte-keuzes)<br />
+  * [Uitleg van de code](#Uitleg-van-de-code)<br />
+  * [Licentie](#Licentie)
 
 ## Debrief
+<details open>
+<summary>onze debrief</summary>
 In deze debriefing zullen wij de opdracht en de opdrachtgever in kaart brengen:
 
 ### Contactgegevens
@@ -49,8 +55,44 @@ De website is bedoeld voor studenten en docenten. Met de website kunnen docenten
 
 ### Relatie met andere projecten
 Het project is onderdeel van de HvA. 
+</details>
 
 
+## Probleem definitie
+CMD Amsterdam wilt een online smoelenboek. Vroeger voor corona hingen er fysieke afbeeldingen naast de deuren van de kamers. Op deze afbeeldingen  stonden de gezichten van de docenten met hun naam. Deze hingen dan bij de kamers van hun vaste plek. Sinds die tijd is CMD gegroeid en hebben de docenten niet meer een vaste plek waar ze zitten als ze geen les geven. Hierdoor zijn dus ook de afbeeldingen naast de kamers verdwenen.
+
+CMD, met name Vasilis van Gemert en Brit Wijnmaalen, zijn dus nu op zoek om dezelfde fijne sfeer terug te krijgen. De sfeer dat je als student gewoon bij docenten aan kon kloppen voor vragen. Hierbij kunnen de docenten ook extra informatie over zichzelf delen om ook op andere vlakken met studenten of andere docenten te kunnen connecten.
+
+### User stories
+Met dit online smoelenboek gaan wij proberen de volgende user stories te behalen.
+
+1. Docent opzoeken
+
+Als student, wil ik snel een naam bij een gezicht kunnen vinden, zodat ik weet hoe mijn docent er uitziet/ook al weer heet.
+
+2. Connectie met docent maken
+
+Als docent, wil ik snel meer weten over collega’s, zodat ik interessantere connecties weet te leggen
+
+3. Profiel kunnen wijzigen
+
+Als docent, wil ik eenvoudig mijn profiel kunnen wijzigen, zodat ik dat niet op honderd verschillende plekken hoef te doen.
+
+
+## Design Challenge
+De docenten moeten met z'n allen op een heel groot scherm zichtbaar zijn. Je moet kunnen klikken op een foto en dan meer info kunnen lezen. En idealiter zou het gekoppeld moeten zijn aan een bestaande API zodat docenten hun eigen profiel kunnen updaten.
+
+## Oplossing
+
+## Gemaakte keuzes
+Tijdens onze tijd die wij werkten aan deze opdracht hebben wij keuzes moeten maken die verdere acties bepaalde voor nieuwere features. Hier zullen wij uitleggen waarom we deze acties hebben gemaakt.
+
+### CMS
+Vanuit de minor werd ons aangeraden om het headless cms Prismic te gebruiken. Een headless CMS is een systeem waarin de gebruiken informatie kan zetten waar zelf vervolgens nog een website aan gekoppeld moet worden. Wat wij echter nodig hadden is dat er op de eigen website informatie gegeven kan worden zodat deze vervolgens afgebeeld kan worden. In ons geval was dat een docent zelf op de website zijn of haar informatie kan aanmaken of aanpassen. Dit kan jammer genoeg niet met prismic. Wij hebben toen met de opdrachtgever besloten dat wisselen naar een ander headless cms te veel tijd in zou nemen. Hierdoor hebben we besloten om bij Prismic te blijven en het account dat gebruikt kan worden voor het cms zelf, te gebruiken als de enige manier dat er data aangeleverd kan worden aangezien dit de enige mogelijke optie is die geen geld zou kosten.
+
+De keuze om bij Prismic te blijven heeft meerdere gevolgen. Het eerste gevolg is dat de user story "Profiel kunnen wijzigen" niet optimaal uitgevoerd kan worden doordat er maar 1 account is. Het tweede gevolg is dat er geen connectie met de rooster website gemaakt kan worden. De opdrachtgever wilde dat de docenten niet zelf hun beschikbaarheid hoefde in te vullen door via de rooster website van de HvA een csv bestand te exporteren en deze via het cms te importeren. Echter kost het importeren geld aangezien dit een premium functie is binnen Prismic.
+
+## Uitleg van de code
 
 ## Licentie
 
