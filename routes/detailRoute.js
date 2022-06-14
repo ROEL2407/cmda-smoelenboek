@@ -34,7 +34,6 @@ const options = {
 };
 
 detailRoute.get("/:id", async (req, res) => {
-  console.log(req.params.id);
   const document = await client.getByID(req.params.id);
   const teachers = await client.getAllByType("persoon");
   let relatedTeachers = [];
@@ -47,5 +46,11 @@ detailRoute.get("/:id", async (req, res) => {
       }
     }
   });
+
+  // get 9 random teachers
+  const random = relatedTeachers.sort(() => 0.5 - Math.random());
+
+  relatedTeachers = random.slice(0, 9);
+
   res.render("detail", { document, teachers: relatedTeachers });
 });
