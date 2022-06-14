@@ -17,6 +17,7 @@ catalogRoute.get("/", async (req, res) => {
       : 0
   );
 
+  // Sort teachers by letter
   let data = document.reduce((r, e) => {
     // get first letter of name of current element
     let group = e.data.naam[0].text[0];
@@ -28,11 +29,18 @@ catalogRoute.get("/", async (req, res) => {
     return r;
   }, {});
 
-  // since data at this point is an object, to get array of values
-  // we use Object.values method
   let result = Object.values(data);
+
+  // get full alphabet
+  let letters = [];
+
+  for (let i = 0; i < 26; i++) {
+    let letter = String.fromCharCode(97 + i).toLocaleUpperCase();
+    letters.push(letter);
+  }
 
   res.render("catalog", {
     docenten: result,
+    letters,
   });
 });
