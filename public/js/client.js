@@ -12,12 +12,11 @@ if (
 ) {
   window.onload = () => {
     window.scrollTo({
-      top: 520,
+      top: 850,
       behavior: "smooth",
     });
   };
 }
-
 
 links.forEach((link) => {
   link.addEventListener("click", function (event) {
@@ -26,7 +25,7 @@ links.forEach((link) => {
   });
 });
 
-  closes.forEach((close) => {
+closes.forEach((close) => {
   close.addEventListener("click", function (event) {
     event.preventDefault();
     pop_ups.forEach((pop_up) => {
@@ -34,7 +33,6 @@ links.forEach((link) => {
     });
   });
 });
-
 
 /* keyboard voor zoekveld */
 
@@ -67,14 +65,14 @@ function onKeyPress(button) {
 // Scroll
 function up() {
   document.querySelector("html").scrollBy({
-    top: -220,
+    top: -170,
     behavior: "smooth",
   });
 }
 
 function down() {
   document.querySelector("html").scrollBy({
-    top: 220,
+    top: 170,
     behavior: "smooth",
   });
 }
