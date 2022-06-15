@@ -99,8 +99,8 @@ footer form input {
 }
 
 #keyboard {
-  max-width: 75%;
-  margin: 0em auto;
+  max-width: 33%;
+  margin: 0em 5em;
 }
 
 .footerCat {
@@ -123,31 +123,6 @@ footer form input {
 .letters a {
   margin: 0 1em;
 }
-
-/* Create page */
-
-/* #create_form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 1em;
-}
-
-fieldset {
-  border: none;
-}
-
-form img {
-  max-width: 10em;
-}
-
-form input {
-  margin-bottom: 1em;
-}
-
-form label {
-  margin-bottom: 0.25em;
-} */
 
 /* Detail page */
 .teacherName {
