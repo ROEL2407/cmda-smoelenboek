@@ -25,7 +25,6 @@ catalogRoute.get("/", async (req, res) => {
     if (!r[group]) r[group] = { group, children: [e] };
     // if there is push current element to children array for that letter
     else r[group].children.push(e);
-    // return accumulator
     return r;
   }, {});
 
@@ -33,7 +32,6 @@ catalogRoute.get("/", async (req, res) => {
 
   // get full alphabet
   let letters = [];
-
   for (let i = 0; i < 26; i++) {
     let letter = String.fromCharCode(97 + i).toLocaleUpperCase();
     letters.push(letter);
