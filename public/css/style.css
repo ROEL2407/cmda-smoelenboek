@@ -94,13 +94,25 @@ footer form input {
   position: fixed;
   width: 100vw;
   bottom: 4em;
-  z-index: 4;
+  z-index: 11;
   display: none;
+  pointer-events:none;
+}
+
+.focusCancel {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 53em;
+  height: 100vh;
+  z-index: 10;
 }
 
 #keyboard {
   max-width: 33%;
   margin: 0em 5em;
+  pointer-events: initial;
 }
 
 .footerCat {

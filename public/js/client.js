@@ -40,7 +40,8 @@ const Keyboard = window.SimpleKeyboard.default;
 
 const keyboardSimple = document.getElementById("keyboard");
 const keyboardWrapper = document.getElementById("keyboardWrapper");
-const keyboardBackground = document.getElementById("keyboard-bg");
+const focusCancel = document.querySelector(".focusCancel");
+const field = document.getElementById("zoek");
 
 console.log(keyboardWrapper);
 
@@ -49,9 +50,23 @@ const keyboard = new Keyboard({
   onKeyPress: (button) => onKeyPress(button),
 });
 
-document.getElementById("zoek").addEventListener("click", (d) => {
-  keyboardWrapper.style.display = "block";
+field.addEventListener("click", (d) => {
+  focusCancel.style.display = "initial";
+  keyboardWrapper.style.display = "initial";
 });
+
+focusCancel.addEventListener("click", (d) => {
+  focusCancel.style.display = "none";
+  keyboardSimple.style.display = "none";
+});
+
+// document.getElementById("zoek").addEventListener("click", (d) => {
+//   keyboardWrapper.style.display = "block";
+// });
+
+// !document.getElementById("zoek").addEventListener("click", (d) => {
+//   keyboardWrapper.style.display = "block";
+// });
 
 function onChange(input) {
   document.querySelector(".input").value = input;
