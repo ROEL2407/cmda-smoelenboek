@@ -69,7 +69,7 @@ footer form input {
 
 /* Home page / smoelenboek overzicht */
 .allTeachers {
-  margin-top: 35em;
+  margin-top: 53em;
 }
 
 .docenten {
@@ -129,7 +129,7 @@ footer form input {
   justify-content: flex-start;
   align-items: center;
   width: 36%;
-  margin-left: 1em;
+  margin-left: 10em;
 }
 
 .letters a {
@@ -306,4 +306,44 @@ button.close {
   padding: 0.75em;
   border-radius: 5px 5px 5px 5px;
   border: 1px solid black;
+}
+
+.catButtons {
+  position: fixed;
+  left: 2em;
+  bottom: 0.5em;
+  display: flex;
+  flex-direction: row;
+}
+
+#catalogButton,
+#gridButton,
+#gridButtonCat {
+  box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  height: 4em;
+  align-items: center;
+  padding: 1em;
+  margin: 0 0.5em;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  font-family: "OpenSans";
+  font-weight: 700;
+  font-size: 12px;
+}
+
+#gridButtonCat {
+  margin-left: 3em;
+}
+
+#catalogButton img,
+#gridButton img,
+#gridButtonCat img {
+  height: 2em;
 }
