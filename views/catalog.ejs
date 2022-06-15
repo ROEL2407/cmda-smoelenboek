@@ -52,7 +52,9 @@
                 <p><%- teacher.data.dagen_aanwezig[0].text -%><% } %></p>
 
                 <% if(teacher.id){ %>
-                <a class="moreInfo" href="/detail/<%- teacher.id -%>">Meer info<% } %></a>
+                <a class="moreInfo" href="/detail/<%- teacher.id -%>"
+                  >Meer info<% } %></a
+                >
               </div>
             </div>
           </div>
@@ -62,6 +64,7 @@
       <% }) %> <%- include("./components/keyboard.ejs") -%>
     </main>
     <footer class="footerCat">
+      <a href="/" id="gridButtonCat"> <img src="/images/grid.png" />Grid</a>
       <section class="letters">
         <% letters.forEach(letter => { %>
         <a href="#<%- letter -%>"> <%- letter -%> </a>
