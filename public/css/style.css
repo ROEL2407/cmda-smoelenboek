@@ -95,12 +95,10 @@ footer form input {
   width: 100vw;
   bottom: 4em;
   z-index: 11;
-  display: none;
   pointer-events:none;
 }
 
 .focusCancel {
-  display: none;
   position: absolute;
   left: 0;
   right: 0;
@@ -212,7 +210,7 @@ h3 {
   top: 19em;
 }
 
-.pop-up.hidden {
+.pop-up.hidden, #keyboardWrapper.hidden, .focusCancel.hidden {
   display: none;
 }
 

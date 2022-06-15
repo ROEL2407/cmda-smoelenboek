@@ -51,22 +51,14 @@ const keyboard = new Keyboard({
 });
 
 field.addEventListener("click", (d) => {
-  focusCancel.style.display = "initial";
-  keyboardWrapper.style.display = "initial";
+  focusCancel.classList.remove("hidden");
+  keyboardWrapper.classList.remove("hidden");
 });
 
 focusCancel.addEventListener("click", (d) => {
-  focusCancel.style.display = "none";
-  keyboardSimple.style.display = "none";
+  focusCancel.classList.add("hidden");
+  keyboardWrapper.classList.add("hidden");
 });
-
-// document.getElementById("zoek").addEventListener("click", (d) => {
-//   keyboardWrapper.style.display = "block";
-// });
-
-// !document.getElementById("zoek").addEventListener("click", (d) => {
-//   keyboardWrapper.style.display = "block";
-// });
 
 function onChange(input) {
   document.querySelector(".input").value = input;
