@@ -6,6 +6,7 @@
   <body>
     <main>
       <section class="allTeachers">
+        <%- notFound -%>
         <section class="docenten">
           <% docenten.forEach(teacher => { %>
           <a href="" class="teacherLink">
@@ -18,9 +19,12 @@
               <% } %>
               <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
             </div>
-            <h3><%- ctx.prismicH.asText(teacher.docent.data.naam) %></h3>
+            <h3>
+              <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>
+            </h3>
           </a>
-          
+
           <div class="pop-up searchPop-up hidden">
             <button class="close">
               <div></div>
@@ -32,7 +36,10 @@
             </h2>
             <div class="popupWrapper">
               <div class="images">
-                <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+                <img
+                  class="teacher"
+                  src="<%- teacher.docent.data.foto.url %>"
+                />
               </div>
               <div id="info">
                 <% if(teacher.docent.data.email.length > 0){ %>
@@ -41,19 +48,77 @@
 
                 <% if(teacher.docent.data.telefoon_nummer.length > 0){ %>
                 <h3>Telefoonnummer</h3>
-                <p><%- teacher.docent.data.telefoon_nummer[0].text -%><% } %></p>
+                <p>
+                  <%- teacher.docent.data.telefoon_nummer[0].text -%><% } %>
+                </p>
 
                 <% if(teacher.docent.data.dagen_aanwezig.length > 0){ %>
                 <h3>Aanwezig op</h3>
                 <p><%- teacher.docent.data.dagen_aanwezig[0].text -%><% } %></p>
 
                 <% if(teacher.docent.id){ %>
-                <a class="moreInfo" href="/detail/<%- teacher.docent.id -%>">Meer info<% } %></a>
+                <a class="moreInfo" href="/detail/<%- teacher.docent.id -%>"
+                  >Meer info<% } %></a
+                >
               </div>
             </div>
           </div>
           <% }) %>
         </section>
+      </section>
+      <!-- if no search results  -->
+      <section class="docenten">
+        <% teachers.forEach(teacher => { %>
+        <a href="" class="teacherLink">
+          <div class="images">
+            <% if(teacher.data.frame !== null){ %>
+            <img
+              class="frame"
+              src="/images/frames/<%- teacher.data.frame%>.png"
+            />
+            <% } %>
+            <img class="teacher" src="<%- teacher.data.foto.url %>" />
+          </div>
+          <h3>
+            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+            ctx.prismicH.asText(teacher.data.achternaam) %>
+          </h3>
+        </a>
+
+        <div class="pop-up searchPop-up hidden">
+          <button class="close">
+            <div></div>
+            <div></div>
+          </button>
+          <h2>
+            <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+            ctx.prismicH.asText(teacher.data.achternaam) %>
+          </h2>
+          <div class="popupWrapper">
+            <div class="images">
+              <img class="teacher" src="<%- teacher.data.foto.url %>" />
+            </div>
+            <div id="info">
+              <% if(teacher.data.email.length > 0){ %>
+              <h3>Email</h3>
+              <p><%- teacher.data.email[0].text -%><% } %></p>
+
+              <% if(teacher.data.telefoon_nummer.length > 0){ %>
+              <h3>Telefoonnummer</h3>
+              <p><%- teacher.data.telefoon_nummer[0].text -%><% } %></p>
+
+              <% if(teacher.data.dagen_aanwezig.length > 0){ %>
+              <h3>Aanwezig op</h3>
+              <p><%- teacher.data.dagen_aanwezig[0].text -%><% } %></p>
+
+              <% if(teacher.id){ %>
+              <a class="moreInfo" href="/detail/<%- teacher.id -%>"
+                >Meer info<% } %></a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
       </section>
       <%- include("./components/keyboard.ejs") -%>
     </main>

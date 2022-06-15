@@ -13,5 +13,17 @@ searchRoute.get("/", async (req, res) => {
       });
     }
   });
-  res.render("search", { docenten });
+  let notFound;
+  let teachers = [];
+  if (docenten.length == 0) {
+    const random = document.sort(() => 0.5 - Math.random());
+    teachers = random.slice(0, 3);
+
+    notFound =
+      "<p> Geen zoekresultaten gevonden voor: " +
+      req.query.q +
+      "<p>" +
+      "<p> misschien zoek je een van deze docenten </p>";
+  }
+  res.render("search", { docenten, notFound, teachers });
 });
