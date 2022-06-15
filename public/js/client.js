@@ -91,3 +91,12 @@ function down() {
     behavior: "smooth",
   });
 }
+
+const catButton = document.getElementById("catalogButton");
+const gridButton = document.getElementById("gridButton");
+
+if (window.location.pathname === "/") {
+  gridButton.style.display = "none";
+} else if (window.location.pathname === "catalog") {
+  catButton.style.display = "none";
+}
