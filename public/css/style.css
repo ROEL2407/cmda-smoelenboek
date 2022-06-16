@@ -65,6 +65,8 @@ footer form input {
   padding: 0.75em;
   border-radius: 5px 5px 5px 5px;
   border: 1px solid black;
+  height: 3.25em;
+  font-family: inherit;
 }
 
 /* Home page / smoelenboek overzicht */
@@ -286,7 +288,10 @@ button.close {
 }
 
 .submitButton,
-.scrollButton {
+.scrollButton,
+#gridButton,
+#gridButtonCat,
+#catalogButton {
   background-color: rgb(0, 0, 0);
   font-size: 13px;
   box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
@@ -300,12 +305,17 @@ button.close {
   text-transform: uppercase;
   border-radius: 5px 5px 5px 5px;
   border: none;
+  flex-direction: row;
+  height: 3.5em;
+  justify-content: center;
+  align-items: center;
 }
 
 #category {
   padding: 0.75em;
   border-radius: 5px 5px 5px 5px;
   border: 1px solid black;
+  font-family: inherit;
 }
 
 .catButtons {
@@ -316,34 +326,17 @@ button.close {
   flex-direction: row;
 }
 
-#catalogButton,
-#gridButton,
-#gridButtonCat {
-  box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border: none;
-  display: flex;
-  justify-content: space-evenly;
-  height: 4em;
-  align-items: center;
-  padding: 1em;
-  margin: 0 0.5em;
-  background-color: black;
-  color: white;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  font-family: "OpenSans";
-  font-weight: 700;
-  font-size: 12px;
-}
-
 #gridButtonCat {
   margin-left: 3em;
+}
+
+#catalogButton {
+  margin-right: 1em;
 }
 
 #catalogButton img,
 #gridButton img,
 #gridButtonCat img {
   height: 2em;
+  margin-right: 0.5em;
 }
