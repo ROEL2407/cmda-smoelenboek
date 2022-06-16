@@ -95,7 +95,7 @@ footer form input {
   width: 100vw;
   bottom: 4em;
   z-index: 11;
-  pointer-events:none;
+  pointer-events: none;
 }
 
 .focusCancel {
@@ -127,7 +127,7 @@ footer form input {
   justify-content: flex-start;
   align-items: center;
   width: 36%;
-  margin-left: 10em;
+  margin-right: 39em;
 }
 
 .letters a {
@@ -210,7 +210,9 @@ h3 {
   top: 19em;
 }
 
-.pop-up.hidden, #keyboardWrapper.hidden, .focusCancel.hidden {
+.pop-up.hidden,
+#keyboardWrapper.hidden,
+.focusCancel.hidden {
   display: none;
 }
 
