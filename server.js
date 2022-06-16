@@ -34,14 +34,12 @@ app.use((req, res, next) => {
 // Routes
 import { homeRoute } from "./routes/homeRoute.js";
 import { catalogRoute } from "./routes/catalogRoute.js";
-import { overviewRoute } from "./routes/overviewRoute.js";
 import { detailRoute } from "./routes/detailRoute.js";
 import { searchRoute } from "./routes/searchRoute.js";
 import { filterRoute } from "./routes/filterRoute.js";
 
 app.use("/", homeRoute);
 app.use("/catalog", catalogRoute);
-app.use("/overview", overviewRoute);
 app.use("/detail", detailRoute);
 app.use("/search", searchRoute);
 app.use("/filter", filterRoute);
