@@ -133,7 +133,12 @@ footer form input {
 }
 
 .letters a {
-  margin: 0 1em;
+  padding: 0.5em 1em;
+}
+
+.letterClicked {
+  background: #32323180;
+  color: #ffffff;
 }
 
 /* Detail page */

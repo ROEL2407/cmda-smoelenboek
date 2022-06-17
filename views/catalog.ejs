@@ -67,7 +67,13 @@
       <a href="/" id="gridButtonCat"> <img src="/images/grid.png" />Grid</a>
       <section class="letters">
         <% letters.forEach(letter => { %>
-        <a href="#<%- letter -%>"> <%- letter -%> </a>
+        <a
+          onclick="letterClicked(this.id)"
+          id="l<%- letter -%>"
+          href="#<%- letter -%>"
+        >
+          <%- letter -%>
+        </a>
         <% }) %>
       </section>
       <nav>

@@ -55,10 +55,10 @@ const keyboard = new Keyboard({
   onKeyPress: (button) => onKeyPress(button),
 });
 
-field.addEventListener("click", (d) => {
-  focusCancel.classList.remove("hidden");
-  keyboardWrapper.classList.remove("hidden");
-});
+// field.addEventListener("click", (d) => {
+//   focusCancel.classList.remove("hidden");
+//   keyboardWrapper.classList.remove("hidden");
+// });
 
 focusCancel.addEventListener("click", (d) => {
   focusCancel.classList.add("hidden");
@@ -96,4 +96,21 @@ if (window.location.pathname === "/") {
   gridButton.style.display = "none";
 } else if (window.location.pathname === "catalog") {
   catButton.style.display = "none";
+}
+
+// focus
+let oldId;
+
+function letterClicked(clicked_id) {
+  const link = document.getElementById(clicked_id);
+  const linkOld = document.getElementById(oldId);
+
+  // remove class from previous clicked id
+  if (oldId !== undefined) {
+    console.log("remove");
+    linkOld.classList.remove("letterClicked");
+  }
+
+  oldId = clicked_id;
+  link.classList.add("letterClicked");
 }
