@@ -1,6 +1,7 @@
 const links = document.querySelectorAll(".teacherLink");
 const closes = document.querySelectorAll(".close");
 const pop_ups = document.querySelectorAll(".pop-up");
+const all_teachers = document.querySelector(".allTeachers");
 
 // disable long press
 window.oncontextmenu = function () {
@@ -27,6 +28,7 @@ links.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
     this.nextElementSibling.classList.remove("hidden");
+    all_teachers.classList.add("openPop");
   });
 });
 
@@ -35,6 +37,7 @@ closes.forEach((close) => {
     event.preventDefault();
     pop_ups.forEach((pop_up) => {
       pop_up.classList.add("hidden");
+      all_teachers.classList.remove("openPop");
     });
   });
 });
@@ -55,10 +58,10 @@ const keyboard = new Keyboard({
   onKeyPress: (button) => onKeyPress(button),
 });
 
-// field.addEventListener("click", (d) => {
-//   focusCancel.classList.remove("hidden");
-//   keyboardWrapper.classList.remove("hidden");
-// });
+field.addEventListener("click", (d) => {
+  focusCancel.classList.remove("hidden");
+  keyboardWrapper.classList.remove("hidden");
+});
 
 focusCancel.addEventListener("click", (d) => {
   focusCancel.classList.add("hidden");

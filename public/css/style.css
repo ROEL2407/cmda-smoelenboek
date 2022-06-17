@@ -71,7 +71,9 @@ footer form input {
 
 /* Home page / smoelenboek overzicht */
 .allTeachers {
+  width: 100%;
   margin-top: 53em;
+  transition: 0.5s;
 }
 
 .docenten {
@@ -204,20 +206,31 @@ h3 {
 
 /*POP-UP*/
 .pop-up {
-  position: absolute;
-  min-height: 55vh;
+  position: fixed;
+  right: 0em;
+  top: 0em;
+  height: 100vh;
   z-index: 10;
   background-color: #fff;
   box-shadow: 0px 10px 18px #000;
   padding: 2em;
-  border-radius: 1em;
+  border-left: 1px solid black;
+  width: 23%;
+  transition: 0.5s;
+}
+
+.allTeachers.openPop {
+  width: 70%;
 }
 
 .searchPop-up {
   top: 19em;
 }
 
-.pop-up.hidden,
+.pop-up.hidden {
+  right: -30em;
+}
+
 #keyboardWrapper.hidden,
 .focusCancel.hidden {
   display: none;
@@ -255,12 +268,11 @@ button.close {
 }
 
 .popupWrapper {
-  display: flex;
   text-align: left;
 }
 
 .popupWrapper .teacher {
-  max-width: 15em;
+  max-width: 13em;
 }
 
 .popupWrapper #info {
