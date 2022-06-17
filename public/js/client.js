@@ -2,6 +2,11 @@ const links = document.querySelectorAll(".teacherLink");
 const closes = document.querySelectorAll(".close");
 const pop_ups = document.querySelectorAll(".pop-up");
 
+// disable long press
+window.oncontextmenu = function () {
+  return false;
+};
+
 // scroll to top content
 if (
   window.location.pathname === "/" ||
