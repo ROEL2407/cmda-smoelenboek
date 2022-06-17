@@ -29,7 +29,7 @@
           <p><%- document.data.hobbies[0].text -%><% } %></p>
 
           <% if(document.data.dagen_aanwezig.length > 0){ %>
-          <h3>Aanwezig</h3>
+          <h3>Beschikbaar op</h3>
           <p><%- document.data.dagen_aanwezig[0].text -%><% } %></p>
 
           <% if(document.data.leuk_feitje.length > 0){ %>
@@ -38,7 +38,7 @@
         </section>
         <section class="relatedTeachers">
           <h2 class="relatedTeachersTitle">
-            Vergelijkbare <%- document.data.specaliteit %> docenten
+            Andere <%- document.data.specaliteit %> docenten
           </h2>
           <% teachers.forEach(teacher => { %>
 
@@ -69,7 +69,10 @@
             </h2>
             <div class="popupWrapper">
               <div class="images">
-                <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+                <img
+                  class="teacher"
+                  src="<%- teacher.docent.data.foto.url %>"
+                />
               </div>
               <div id="info">
                 <% if(teacher.docent.data.email.length > 0){ %>
@@ -78,14 +81,18 @@
 
                 <% if(teacher.docent.data.telefoon_nummer.length > 0){ %>
                 <h3>Telefoonnummer</h3>
-                <p><%- teacher.docent.data.telefoon_nummer[0].text -%><% } %></p>
+                <p>
+                  <%- teacher.docent.data.telefoon_nummer[0].text -%><% } %>
+                </p>
 
                 <% if(teacher.docent.data.dagen_aanwezig.length > 0){ %>
-                <h3>Aanwezig op</h3>
+                <h3>Beschikbaar op</h3>
                 <p><%- teacher.docent.data.dagen_aanwezig[0].text -%><% } %></p>
 
                 <% if(teacher.docent.id){ %>
-                <a class="moreInfo" href="/detail/<%- teacher.docent.id -%>">Meer info<% } %></a>
+                <a class="moreInfo" href="/detail/<%- teacher.docent.id -%>"
+                  >Meer info<% } %></a
+                >
               </div>
             </div>
           </div>
