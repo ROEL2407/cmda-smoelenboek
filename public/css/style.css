@@ -200,8 +200,9 @@ h3 {
   grid-column: 1 / -1;
 }
 
-.teacherLink h3 {
+.teacherLink h4 {
   text-align: center;
+  margin-top: 1.25em;
 }
 
 /*POP-UP*/
