@@ -1,12 +1,13 @@
 # Design Rationale CMDA Smoelenboek
 
 ## Inhoudsopgave
-  * [Debrief](#Debrief)<br />
-  * [Probleem definitie](#Probleem-definitie)<br />
-  * [Design challenge](#Design-challenge)<br />
-  * [Oplossing](#Oplossing)<br />
-  * [Gemaakte keuzes](#Gemaakte-keuzes)<br />
-  * [Uitleg van de code](#Uitleg-van-de-code)<br />
+  * [Debrief](#Debrief)
+  * [Probleem definitie](#Probleem-definitie)
+  * [Design challenge](#Design-challenge)
+  * [Oplossing](#Oplossing)
+  * [Gemaakte keuzes](#Gemaakte-keuzes)
+  * [Uitleg van de code](#Uitleg-van-de-code)
+  * [Wiki's](#Wiki's)
   * [Licentie](#Licentie)
 
 ## Debrief
@@ -104,6 +105,10 @@ Wij hebben ervoor gekozen om alle navigatie in de footer te plaatsen, dit hebben
 
 
 ## Uitleg van de code
+
+## Wiki's 
+[Wiki Roel](https://github.com/ROEL2407/cmda-smoelenboek/wiki) <br />
+[Wiki Marloes](https://github.com/marloestacx/cmda-smoelenboek/wiki)
 
 ## Licentie
 
