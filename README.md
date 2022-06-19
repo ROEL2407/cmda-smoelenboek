@@ -1,12 +1,13 @@
 # Design Rationale CMDA Smoelenboek
 
 ## Inhoudsopgave
-  * [Debrief](#Debrief)<br />
-  * [Probleem definitie](#Probleem-definitie)<br />
-  * [Design challenge](#Design-challenge)<br />
-  * [Oplossing](#Oplossing)<br />
-  * [Gemaakte keuzes](#Gemaakte-keuzes)<br />
-  * [Uitleg van de code](#Uitleg-van-de-code)<br />
+  * [Debrief](#Debrief)
+  * [Probleem definitie](#Probleem-definitie)
+  * [Design challenge](#Design-challenge)
+  * [Oplossing](#Oplossing)
+  * [Gemaakte keuzes](#Gemaakte-keuzes)
+  * [Uitleg van de code](#Uitleg-van-de-code)
+  * [Wiki's](#Wiki's)
   * [Licentie](#Licentie)
 
 ## Debrief
@@ -59,7 +60,7 @@ Het project is onderdeel van de HvA.
 
 
 ## Probleem definitie
-CMD Amsterdam wilt een online smoelenboek. Vroeger voor corona hingen er fysieke afbeeldingen naast de deuren van de kamers. Op deze afbeeldingen  stonden de gezichten van de docenten met hun naam. Deze hingen dan bij de kamers van hun vaste plek. Sinds die tijd is CMD gegroeid en hebben de docenten niet meer een vaste plek waar ze zitten als ze geen les geven. Hierdoor zijn dus ook de afbeeldingen naast de kamers verdwenen.
+CMD Amsterdam wilt een online smoelenboek. Vroeger voor corona hingen er fysieke afbeeldingen naast de deuren van de kamers. Op deze afbeeldingen stonden de gezichten van de docenten met hun naam. Deze hingen dan bij de kamers van hun vaste plek. Sinds die tijd is CMD gegroeid en hebben de docenten niet meer een vaste plek waar ze zitten als ze geen les geven. Hierdoor zijn dus ook de afbeeldingen naast de kamers verdwenen.
 
 CMD, met name Vasilis van Gemert en Brit Wijnmaalen, zijn dus nu op zoek om dezelfde fijne sfeer terug te krijgen. De sfeer dat je als student gewoon bij docenten aan kon kloppen voor vragen. Hierbij kunnen de docenten ook extra informatie over zichzelf delen om ook op andere vlakken met studenten of andere docenten te kunnen connecten.
 
@@ -83,6 +84,7 @@ Als docent, wil ik eenvoudig mijn profiel kunnen wijzigen, zodat ik dat niet op 
 De docenten moeten met z'n allen op een heel groot scherm zichtbaar zijn. Je moet kunnen klikken op een foto en dan meer info kunnen lezen. En idealiter zou het gekoppeld moeten zijn aan een bestaande API zodat docenten hun eigen profiel kunnen updaten.
 
 ## Oplossing
+Onze oplossing voor het probleem is een groot scherm in de medialounge, op dit scherm kun je alle docenten zien. Wanneer je op een docent tikt krijg je een pop-up met wat basis informatie zoals op welke dagen de docent beschikbaar is en zijn email. Als je door tikt op meer info krijg je alle informatie van de docent te zien, dit kan bestaan uit hun hobby's en / of een leuke feitje over ze, zo kun je de docent beter leren kennen. Op de detailpagina staat naast de docent 9 andere docenten die dezelfde specialiteit hebben, zo kun je zien welke docenten dezelfde specialiteit hebben om zo met deze in contact te komen. Onderaan de pagina kun je switchen tussen een grid en een catalogus view, in de catalogus view staan alle docenten alfabetisch gesorteerd op voornaam. Onderaan de pagina kun je ook zoeken op een docent door hun naam in te typen, als er geen resultaten gevonden worden krijg je 3 random docenten te zien, verder kun je nog filteren op specialiteit van een docenten. Rechts onderin zitten een omhoog en omlaag knop waarmee je de pagina omhoog en omlaag kan bewegen voor als je niet bij de bovenste rij kunt komen of als je niet de motoriek hebt om te scrollen. 
 
 ## Gemaakte keuzes
 Tijdens onze tijd die wij werkten aan deze opdracht hebben wij keuzes moeten maken die verdere acties bepaalde voor nieuwere features. Hier zullen wij uitleggen waarom we deze acties hebben gemaakt.
@@ -92,7 +94,21 @@ Vanuit de minor werd ons aangeraden om het headless cms Prismic te gebruiken. Ee
 
 De keuze om bij Prismic te blijven heeft meerdere gevolgen. Het eerste gevolg is dat de user story "Profiel kunnen wijzigen" niet optimaal uitgevoerd kan worden doordat er maar 1 account is. Het tweede gevolg is dat er geen connectie met de rooster website gemaakt kan worden. De opdrachtgever wilde dat de docenten niet zelf hun beschikbaarheid hoefde in te vullen door via de rooster website van de HvA een csv bestand te exporteren en deze via het cms te importeren. Echter kost het importeren geld aangezien dit een premium functie is binnen Prismic.
 
+### Scrollen
+Wij hebben ervoor gekozen om een extra stuk ruimte aan de bovenkant van de pagina te plaatsen zodat er kan gescrollt worden waarbij de bovenste rij docenten onderaan de pagina komt, op deze manier kunnen ook studenten / docenten die niet bovenin bij het scherm kunnen komen bij de bovenste rij docenten komen.
+
+### Detail pagina
+Wij hebben ervoor gekozen om eerst een pop-up te laten zien met wat basis informatie over de docent zoals dagen beschikbaar en hun email, hierdoor kun je als je snel een docent nodig hebt meteen zien of deze beschikbaar is en eventueel wat hun email adres is om een mail naar hun te sturen. Als je daarna op meer info tikt krijg je alle informatie over de docent te zien waarmee je deze echt kan leren kennen. 
+
+### Footer
+Wij hebben ervoor gekozen om alle navigatie in de footer te plaatsen, dit hebben wij gedaan omdat de website op een groot scherm getoond wordt waarbij niet alle docenten / studenten bij de bovenkant van het scherm kunnen komen. Door middel van de scroll knoppen kan iedereen bij de bovenste rij docenten komen.
+
+
 ## Uitleg van de code
+
+## Wiki's 
+[Wiki Roel](https://github.com/ROEL2407/cmda-smoelenboek/wiki) <br />
+[Wiki Marloes](https://github.com/marloestacx/cmda-smoelenboek/wiki)
 
 ## Licentie
 

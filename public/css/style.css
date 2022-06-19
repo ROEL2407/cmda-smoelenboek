@@ -241,37 +241,6 @@ h3 {
   display: none;
 }
 
-button.close {
-  z-index: 3000;
-  display: flex;
-  align-self: flex-end;
-  position: relative;
-  height: 2em;
-  width: 2em;
-  border: none;
-  background-color: transparent;
-  margin-right: 0.625em;
-  cursor: pointer;
-}
-
-.close div {
-  position: absolute;
-  height: 1.625em;
-  width: 2px;
-  margin: 0;
-  background-color: black;
-  left: 50%;
-  top: 20%;
-}
-
-.close div:first-of-type {
-  transform: rotate(45deg);
-}
-
-.close div:last-of-type {
-  transform: rotate(135deg);
-}
-
 .popupWrapper {
   text-align: left;
 }
@@ -284,7 +253,7 @@ button.close {
   padding: 0em 1em 2em;
 }
 
-.popupWrapper .moreInfo {
+.popupWrapper .moreInfo, .close {
   margin: 1.5em 0em 1em;
   background-color: rgb(0, 0, 0);
   box-shadow: 0 -3px rgb(0 0 0 / 10%) inset;
@@ -293,11 +262,38 @@ button.close {
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 2px;
-  padding: 1em;
-  position: relative;
   text-transform: uppercase;
   border-radius: 5px 5px 5px 5px;
   border: none;
+  position: absolute;
+  bottom: 5.5em;
+  right: 2em;
+  padding: 1em 4em;
+}
+
+button.close {
+  z-index: 3000;
+  cursor: pointer;
+  left: 2em;
+  right: initial;
+}
+
+.close div {
+  position: absolute;
+  height: 1.625em;
+  width: 2px;
+  margin: 0;
+  background-color: white;
+  left: 2.5em;
+  top: 1.2em;
+}
+
+.close div:first-of-type {
+  transform: rotate(45deg);
+}
+
+.close div:last-of-type {
+  transform: rotate(135deg);
 }
 
 .filter {
