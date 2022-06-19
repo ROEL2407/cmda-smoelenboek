@@ -95,7 +95,7 @@ Vanuit de minor werd ons aangeraden om het headless cms Prismic te gebruiken. Ee
 De keuze om bij Prismic te blijven heeft meerdere gevolgen. Het eerste gevolg is dat de user story "Profiel kunnen wijzigen" niet optimaal uitgevoerd kan worden doordat er maar 1 account is. Het tweede gevolg is dat er geen connectie met de rooster website gemaakt kan worden. De opdrachtgever wilde dat de docenten niet zelf hun beschikbaarheid hoefde in te vullen door via de rooster website van de HvA een csv bestand te exporteren en deze via het cms te importeren. Echter kost het importeren geld aangezien dit een premium functie is binnen Prismic.
 
 ### Scrollen
-Wij hebben ervoor gekozen om een extra stuk ruimte aan de bovenkant van de pagina te plaatsen zodat er kan gescrollt worden waarbij de bovenste rij docenten onderaan de pagina komt, op deze manier kunnen ook stuenten / docenten die niet bovenin bij het scherm kunnen komen bij de bovenste rij docenten komen.
+Wij hebben ervoor gekozen om een extra stuk ruimte aan de bovenkant van de pagina te plaatsen zodat er kan gescrollt worden waarbij de bovenste rij docenten onderaan de pagina komt, op deze manier kunnen ook studenten / docenten die niet bovenin bij het scherm kunnen komen bij de bovenste rij docenten komen.
 
 ### Detail pagina
 Wij hebben ervoor gekozen om eerst een pop-up te laten zien met wat basis informatie over de docent zoals dagen beschikbaar en hun email, hierdoor kun je als je snel een docent nodig hebt meteen zien of deze beschikbaar is en eventueel wat hun email adres is om een mail naar hun te sturen. Als je daarna op meer info tikt krijg je alle informatie over de docent te zien waarmee je deze echt kan leren kennen. 
