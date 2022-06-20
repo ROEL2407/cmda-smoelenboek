@@ -6,7 +6,7 @@
   <body>
     <main>
       <section class="allTeachers">
-        <%- notFound -%>
+        <h2><%-result-%></h2>
         <section class="docenten">
           <% docenten.forEach(teacher => { %>
           <a href="" class="teacherLink">
@@ -19,10 +19,10 @@
               <% } %>
               <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
             </div>
-            <h4>
+            <h3>
               <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
               ctx.prismicH.asText(teacher.docent.data.achternaam) %>
-            </h4>
+            </h3>
           </a>
 
           <div class="pop-up searchPop-up hidden">
@@ -123,7 +123,31 @@
       </section>
       <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer><%- include("./components/footer.ejs") -%></footer>
+    <footer>
+      <section class="catButtons">
+        <a href="/catalog" id="catalogButton">
+          <img src="/images/index.png" />Catalog</a
+        >
+        <a href="/" id="gridButton"> <img src="/images/grid.png" />Grid</a>
+      </section>
+      <%- include("./components/search.ejs") -%>
+      <form method="get" action="/filterSearch">
+        <select id="category" name="category" onchange="this.form.submit()">
+          <option value="" disabled selected>Specaliteit</option>
+          <option value="Tech">Tech</option>
+          <option value="UI">UI</option>
+          <option value="Vormgeving">Vormgeving</option>
+          <option value="Interactie">Interactie</option>
+          <option value="Projecten">Projecten</option>
+          <option value="Cultuur">Cultuur</option>
+          <option value="Staff medewerkers">Staff</option>
+        </select>
+      </form>
+      <nav>
+        <button class="scrollButton" onClick="up()">▲ Omhoog</button>
+        <button class="scrollButton" onClick="down()">▼ Omlaag</button>
+      </nav>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
     <script src="/js/client.js"></script>
   </body>
