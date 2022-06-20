@@ -1,10 +1,12 @@
-import express from "express";
+import express, { query } from "express";
 export const filterRoute = express.Router();
 import { client } from "../config/prismicConfig.js";
 
+let docenten = [];
+
 filterRoute.get("/", async (req, res) => {
   const document = await client.getAllByType("persoon");
-  let docenten = [];
+  docenten = [];
   //get all teachers with chosen category
   document.forEach((docent) => {
     if (docent.data.specaliteit.includes(req.query.category)) {
@@ -13,6 +15,8 @@ filterRoute.get("/", async (req, res) => {
       });
     }
   });
+
+  global.filterTeachers = docenten;
 
   //   sort on last name
   docenten.sort((a, b) =>
@@ -23,8 +27,10 @@ filterRoute.get("/", async (req, res) => {
       : 0
   );
 
+  let result = req.query.category + " docenten";
+
   res.render("filter", {
     docenten,
-    title: req.query.category,
+    result,
   });
 });
