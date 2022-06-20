@@ -13,7 +13,7 @@ filterRoute.get("/", async (req, res) => {
       });
     }
   });
-  console.log(docenten);
+
   //   sort on last name
   docenten.sort((a, b) =>
     a.docent.data.achternaam[0].text > b.docent.data.achternaam[0].text
