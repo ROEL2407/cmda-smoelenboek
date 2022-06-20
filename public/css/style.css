@@ -88,11 +88,16 @@ footer form input {
   max-width: 10em;
   text-align: center;
   margin-left: 0.25em;
-  padding-top: 2em;
+  padding-top: 1em;
 }
 
 .docenten p {
   padding-top: 0.25em;
+}
+
+.docenten a,
+.relatedTeachers a {
+  align-items: center;
 }
 
 #keyboardWrapper {
@@ -207,7 +212,7 @@ h3 {
 
 .teacherLink h4 {
   text-align: center;
-  margin-top: 1.25em;
+  /* margin-top: 1.25em; */
 }
 
 /*POP-UP*/
