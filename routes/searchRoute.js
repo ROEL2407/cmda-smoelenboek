@@ -7,12 +7,17 @@ searchRoute.get("/", async (req, res) => {
   let docenten = [];
   //get all teachers with search text
   document.forEach((docent) => {
-    if (docent.data.naam[0].text.toLowerCase().includes(req.query.q)) {
+    let firstName = docent.data.naam[0].text;
+    let lastName = docent.data.achternaam[0].text;
+    let fullName = firstName + " " + lastName;
+
+    if (fullName.toLowerCase().includes(req.query.q)) {
       docenten.push({
         docent: docent,
       });
     }
   });
+
   let notFound;
   let teachers = [];
   if (docenten.length == 0) {
