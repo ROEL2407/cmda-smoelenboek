@@ -6,7 +6,7 @@
   <body>
     <main>
       <section class="allTeachers">
-        <h2><%-title-%> docenten</h2>
+        <h2><%-result-%></h2>
         <section class="docenten">
           <% docenten.forEach(teacher => { %>
           <a href="/detail/<%= teacher.docent.id %>" class="teacherLink">
@@ -69,7 +69,33 @@
       </section>
       <%- include("./components/keyboard.ejs") -%>
     </main>
-    <footer><%- include("./components/footer.ejs") -%></footer>
+    <footer>
+      <section class="catButtons">
+        <a href="/catalog" id="catalogButton">
+          <img src="/images/index.png" />Catalog</a
+        >
+        <a href="/" id="gridButton"> <img src="/images/grid.png" />Grid</a>
+      </section>
+      <form method="get" action="/searchFilter" data-search-form>
+        <input
+          type="search"
+          name="q"
+          placeholder="Zoek een docent"
+          data-search-input
+          class="input"
+          id="zoek"
+          autocomplete="off"
+        />
+        <button class="submitButton" type="submit" aria-label="zoeken">
+          Zoeken
+        </button>
+      </form>
+      <%- include("./components/filter.ejs") -%>
+      <nav>
+        <button class="scrollButton" onClick="up()">▲ Omhoog</button>
+        <button class="scrollButton" onClick="down()">▼ Omlaag</button>
+      </nav>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
     <script src="/js/client.js"></script>
   </body>
