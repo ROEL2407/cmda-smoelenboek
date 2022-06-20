@@ -27,6 +27,11 @@ if (
 links.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
+    pop_ups.forEach(pop => {
+      if (!pop.classList.contains("hidden")) {
+        pop.classList.add("hidden");
+      }
+    })
     this.nextElementSibling.classList.remove("hidden");
     all_teachers.classList.add("openPop");
   });
