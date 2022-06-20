@@ -18,17 +18,21 @@ searchRoute.get("/", async (req, res) => {
     }
   });
 
-  let notFound;
+  global.searchTeachers = docenten;
+  global.searchWord = req.query.q;
+
+  let result;
   let teachers = [];
   if (docenten.length == 0) {
     const random = document.sort(() => 0.5 - Math.random());
     teachers = random.slice(0, 3);
 
-    notFound =
-      "<p> Geen zoekresultaten gevonden voor: " +
+    result =
+      "Geen zoekresultaten gevonden voor: " +
       req.query.q +
-      "<p>" +
-      "<p> misschien zoek je een van deze docenten </p>";
+      "</br> misschien zoek je een van deze docenten";
+  } else {
+    result = "Resultaten met " + req.query.q;
   }
-  res.render("search", { docenten, notFound, teachers });
+  res.render("search", { docenten, result, teachers });
 });
