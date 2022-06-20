@@ -37,12 +37,16 @@ import { catalogRoute } from "./routes/catalogRoute.js";
 import { detailRoute } from "./routes/detailRoute.js";
 import { searchRoute } from "./routes/searchRoute.js";
 import { filterRoute } from "./routes/filterRoute.js";
+import { filterSearchRoute } from "./routes/filterSearchRoute.js";
+import { searchFilterRoute } from "./routes/searchFilterRoute.js";
 
 app.use("/", homeRoute);
 app.use("/catalog", catalogRoute);
 app.use("/detail", detailRoute);
 app.use("/search", searchRoute);
 app.use("/filter", filterRoute);
+app.use("/filterSearch", filterSearchRoute);
+app.use("/searchFilter", searchFilterRoute);
 
 app.get("/create", (req, res) => {
   res.render("create", {});
