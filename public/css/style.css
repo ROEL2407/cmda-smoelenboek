@@ -48,7 +48,7 @@ main h2 {
 footer {
   position: fixed;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 4em;
   align-items: center;
   left: 0;
@@ -58,6 +58,7 @@ footer {
   color: white;
   text-align: center;
   z-index: 11;
+  padding: 0em 2em;
 }
 
 footer form input {
@@ -335,9 +336,7 @@ button.close {
 }
 
 .catButtons {
-  position: fixed;
-  left: 2em;
-  bottom: 0.5em;
+  margin-top: 0.25em;
   display: flex;
   flex-direction: row;
 }
