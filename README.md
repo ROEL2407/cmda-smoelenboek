@@ -137,6 +137,21 @@ Dit zou op alle devices de zoom functie moeten uitschakelen. Echter is dit niet 
 
 ## Uitleg van de code
 
+### Filter
+
+Met het filter feature wordt er gekeken naar welke category je kiest, vervoelgens wordt er gekeken of de docent deze category als specialiteit heeft en als dit zo is wordt deze in een lijstje gestopt. 
+
+``` js
+  document.forEach((docent) => {
+    if (docent.data.specaliteit.includes(req.query.category)) {
+      docenten.push({
+        docent: docent,
+      });
+    }
+  });
+```
+
+
 ## Wiki's
 
 [Wiki Roel](https://github.com/ROEL2407/cmda-smoelenboek/wiki) <br />
