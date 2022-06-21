@@ -8,13 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 var router = express.Router();
 
-const options = {
-  weekday: "long",
-};
 
-let today = new Date().toLocaleDateString("nl-NL", options);
-let docenten = [];
-// let categories = [];
 
 // Set EJS as templating engine
 app.set("view engine", "ejs");
