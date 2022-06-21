@@ -16,6 +16,10 @@
     <main>
       <section class="allTeachers">
         <section class="docenten">
+          <% if (docenten === []) { %>
+            <!-- zero state -->
+            <p>Momenteel zijn er nog geen docenten die hun informatie hebben ingevuld, kom later terug.</p>
+          <% } else { %>
           <% docenten.forEach(teacher => { %>
           <a href="" class="teacherLink">
             <div class="images">
@@ -271,7 +275,7 @@
               <p>Sluiten</p>
             </button>
           </div>
-          <% }) %>
+          <% })} %>
         </section>
       </section>
       <%- include("./components/keyboard.ejs") -%>
