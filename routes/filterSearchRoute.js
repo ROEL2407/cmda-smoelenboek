@@ -16,7 +16,6 @@ filterSearchRoute.get("/", async (req, res) => {
     }
   });
 
-  console.log(docenten);
   //   sort on last name
   docenten.sort((a, b) =>
     a.docent.data.achternaam[0].text > b.docent.data.achternaam[0].text
@@ -27,12 +26,27 @@ filterSearchRoute.get("/", async (req, res) => {
   );
 
   let result;
+  let teachers = [];
 
-  result = "<p> Resultaten voor " + searchWord + " en " + req.query.category;
+  if (docenten.length == 0) {
+    const random = document.sort(() => 0.5 - Math.random());
+    teachers = random.slice(0, 3);
 
-  res.render("filter", {
+    console.log(teachers);
+    result =
+      "Geen zoekresultaten gevonden voor: " +
+      req.query.category +
+      " en " +
+      searchWord +
+      "</br> Misschien zoek je een van deze docenten";
+  } else {
+    result = "<p> Resultaten voor: " + req.query.category + " en " + searchWord;
+  }
+
+  res.render("searchFilter", {
     docenten,
     result,
+    teachers,
     title: req.query.category,
   });
 });
