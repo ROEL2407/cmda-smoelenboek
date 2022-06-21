@@ -56,7 +56,6 @@ const keyboardWrapper = document.getElementById("keyboardWrapper");
 const focusCancel = document.querySelector(".focusCancel");
 const field = document.getElementById("zoek");
 
-console.log(keyboardWrapper);
 
 if (window.location.pathname !== "/catalog") {
 const keyboard = new Keyboard({
@@ -126,14 +125,12 @@ function letterClicked(clicked_id) {
 
 // // timeout to go back to home
 function idleKick() {
-  console.log("appel1");
   const idleDurationSecs = 300;    // X number of seconds
   const redirectUrl = '/';  // Redirect idle users to this URL
   let idleTimeout; // variable to hold the timeout, do not modify
 
   const resetIdleTimeout = function() {
-    console.log("appel2");
-
+    
       // Clears the existing timeout
       if(idleTimeout) clearTimeout(idleTimeout);
 
