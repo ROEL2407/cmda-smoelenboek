@@ -92,7 +92,11 @@ footer form input {
   font-family: inherit;
 }
 
-.navButtons.backButton, .navButtons#catalogButton, .navButtons#gridButton {
+.navButtons.backButton,
+.navButtons#catalogButton,
+.navButtons#gridButton,
+footer #gridButton,
+footer #catalogButton {
   background-color: darkgrey;
   color: #000;
 }
@@ -388,10 +392,6 @@ button.close {
   margin-top: 0.25em;
   display: flex;
   flex-direction: row;
-}
-
-#gridButton {
-  bottom: 0.2em;
 }
 
 #catalogButton {
