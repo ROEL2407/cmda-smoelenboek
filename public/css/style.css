@@ -396,12 +396,10 @@ button.close {
 
 #catalogButton {
   margin-right: 1em;
-  bottom: 0.2em;
 }
 
 #catalogButton img,
-#gridButton img,
-#gridButtonCat img {
+#gridButton img {
   height: 2em;
   margin-right: 0.5em;
 }
