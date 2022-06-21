@@ -178,6 +178,24 @@ Met het filter feature wordt er gekeken naar welke category je kiest, vervoelgen
   });
 ```
 
+### Zoeken
+
+Bij het zoeken wordt eerst de voornaam met de achternaam gecombineerd, zo kan er in een keer op deze string gezocht worden. Dan wordt er gekeken of wat er is ingetypt voor komt in deze naam, zo ja wordt deze in een lijstje gestopt. 
+
+```js
+  document.forEach((docent) => {
+    let firstName = docent.data.naam[0].text;
+    let lastName = docent.data.achternaam[0].text;
+    let fullName = firstName + " " + lastName;
+
+    if (fullName.toLowerCase().includes(req.query.q)) {
+      docenten.push({
+        docent: docent,
+      });
+    }
+  });
+```
+
 
 ## Wiki's
 
