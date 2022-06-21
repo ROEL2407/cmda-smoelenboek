@@ -58,7 +58,7 @@ const field = document.getElementById("zoek");
 
 console.log(keyboardWrapper);
 
-if (!window.location.pathname === "/catalog"){
+if (window.location.pathname !== "/catalog") {
 const keyboard = new Keyboard({
   onChange: (input) => onChange(input),
   onKeyPress: (button) => onKeyPress(button),
