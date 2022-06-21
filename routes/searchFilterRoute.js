@@ -41,13 +41,12 @@ searchFilterRoute.get("/", async (req, res) => {
     teachers = random.slice(0, 3);
 
     result =
-      "<p> Geen zoekresultaten gevonden voor: " +
+      "Geen zoekresultaten gevonden voor: " +
       req.query.q +
-      "<p>" +
-      "<p> misschien zoek je een van deze docenten </p>";
+      "</br> Misschien zoek je een van deze docenten";
   } else {
     let specaliteit = docenten[0].docent.data.specaliteit;
     result = "<p> Resultaten voor " + req.query.q + " en " + specaliteit;
   }
-  res.render("search", { docenten, result, teachers });
+  res.render("searchFilter", { docenten, result, teachers });
 });
