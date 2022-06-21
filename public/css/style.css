@@ -127,10 +127,6 @@ footer form input {
   justify-content: space-between;
 }
 
-.footerCat nav {
-  margin-right: 12em;
-}
-
 .letters {
   display: flex;
   flex-direction: row;
