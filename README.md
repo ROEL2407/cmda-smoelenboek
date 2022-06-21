@@ -137,6 +137,33 @@ Dit zou op alle devices de zoom functie moeten uitschakelen. Echter is dit niet 
 
 ## Uitleg van de code
 
+### Routes
+
+De code is ingedeeld in routes, deze worden geimporteert in de server.js.
+
+```js
+import { homeRoute } from "./routes/homeRoute.js";
+import { catalogRoute } from "./routes/catalogRoute.js";
+import { detailRoute } from "./routes/detailRoute.js";
+import { searchRoute } from "./routes/searchRoute.js";
+import { filterRoute } from "./routes/filterRoute.js";
+import { filterSearchRoute } from "./routes/filterSearchRoute.js";
+import { searchFilterRoute } from "./routes/searchFilterRoute.js";
+```
+Vervolgens wordt er gekozen via welke url je bij deze route kan komen. 
+
+```js
+app.use("/", homeRoute);
+app.use("/catalog", catalogRoute);
+app.use("/detail", detailRoute);
+app.use("/search", searchRoute);
+app.use("/filter", filterRoute);
+app.use("/filterSearch", filterSearchRoute);
+app.use("/searchFilter", searchFilterRoute);
+```
+
+
+
 ### Filter
 
 Met het filter feature wordt er gekeken naar welke category je kiest, vervoelgens wordt er gekeken of de docent deze category als specialiteit heeft en als dit zo is wordt deze in een lijstje gestopt. 
