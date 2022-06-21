@@ -92,6 +92,11 @@ footer form input {
   font-family: inherit;
 }
 
+.navButtons.backButton, .navButtons#catalogButton, .navButtons#gridButton {
+  background-color: darkgrey;
+  color: #000;
+}
+
 /* Home page / smoelenboek overzicht */
 .allTeachers {
   width: 100%;
