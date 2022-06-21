@@ -306,16 +306,22 @@ button.close {
   cursor: pointer;
   left: 2em;
   right: initial;
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .close div {
   position: absolute;
-  height: 1.625em;
+  height: 1.5em;
   width: 2px;
   margin: 0;
   background-color: white;
   left: 2.5em;
   top: 1.2em;
+  height: 1.5em;
 }
 
 .close div:first-of-type {
