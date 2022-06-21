@@ -346,10 +346,10 @@ button.close {
   flex-direction: row;
 }
 
-#gridButtonCat {
+/* #gridButtonCat {
   margin-left: 3em;
   bottom: 0.2em;
-}
+} */
 
 #gridButton {
   bottom: 0.2em;
