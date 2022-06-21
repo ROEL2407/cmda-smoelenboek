@@ -38,7 +38,17 @@ body {
   color: white;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   color: white;
 }
 
@@ -233,8 +243,13 @@ h3 {
   transition: 0.5s;
 }
 
-
-.pop-up h1, .pop-up h2, .pop-up h3, .pop-up h4, .pop-up h5, .pop-up h6, .pop-up p {
+.pop-up h1,
+.pop-up h2,
+.pop-up h3,
+.pop-up h4,
+.pop-up h5,
+.pop-up h6,
+.pop-up p {
   color: #000;
 }
 
