@@ -1,5 +1,10 @@
 .docenten {
   display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  transition: ease-in-out 0.5s;
+}
+
+.openPop .docenten {
   grid-template-columns: repeat(13, 1fr);
 }
 
