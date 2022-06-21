@@ -56,6 +56,12 @@ main {
   margin: 2em 1em 6em 1em;
 }
 
+.zero {
+  position: absolute;
+  bottom: 50vh;
+  text-align: center;
+}
+
 main h2 {
   margin: 1em 0em;
   width: 100%;

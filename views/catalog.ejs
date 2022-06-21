@@ -6,6 +6,10 @@
   <body>
     <main>
       <section class="allTeachers">
+        <% if (docenten = []) { %>
+          <!-- zero state -->
+          <h2 class="zero">Momenteel zijn er nog geen docenten die hun informatie hebben ingevuld, kom later terug.</h2>
+        <% } else { %>
         <% docenten.forEach(groups => { %>
         <h2 id="<%- groups.group-%>"><%- groups.group-%></h2>
         <section class="docenten">
@@ -62,7 +66,7 @@
           <% }) %>
         </section>
       </section>
-      <% }) %> <%- include("./components/keyboard.ejs") -%>
+      <% })} %> <%- include("./components/keyboard.ejs") -%>
     </main>
     <footer class="footerCat">
       <a href="/" id="gridButtonCat"> <img src="/images/grid.png" />Grid</a>
