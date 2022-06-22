@@ -10,9 +10,13 @@ const options = {
 detailRoute.get("/:id", async (req, res) => {
   const document = await client.getByID(req.params.id);
   const teachers = await client.getAllByType("persoon");
+
   let relatedTeachers = [];
   teachers.forEach((docent) => {
-    if (docent.data.naam[0].text !== document.data.naam[0].text) {
+    if (
+      docent.data.naam[0].text !== document.data.naam[0].text &&
+      docent.data.achternaam[0].text !== document.data.achternaam[0].text
+    ) {
       if (document.data.specaliteit == docent.data.specaliteit) {
         relatedTeachers.push({
           docent: docent,
