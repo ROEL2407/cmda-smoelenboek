@@ -37,9 +37,13 @@
               <% } %>
               <img
                 class="teacher"
-                src="<%- teacher.data.foto.url %>"
                 alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
                 ctx.prismicH.asText(teacher.data.achternaam) %>"
+                <% if(!document.data.foto.url){%>
+                  src="/images/no-img.jpg" 
+                <% } else { %>
+                  src="<%- document.data.foto.url %>"
+                <% } %>  
               />
             </div>
             <h4>

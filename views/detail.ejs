@@ -15,7 +15,11 @@
             class="teacherImage"
             alt="foto van <%- ctx.prismicH.asText(document.data.naam) %> <%-
           ctx.prismicH.asText(document.data.achternaam) %>"
+          <% if(!document.data.foto.url){%>
+            src="/images/no-img.jpg" 
+          <% } else { %>
             src="<%- document.data.foto.url %>"
+          <% } %>  
           />
 
           <% if(document.data.email.length > 0){ %>
