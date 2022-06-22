@@ -139,6 +139,10 @@ footer #catalogButton {
   pointer-events: none;
 }
 
+.hg-button {
+  color: #000;
+} 
+
 .focusCancel {
   position: absolute;
   left: 0;
