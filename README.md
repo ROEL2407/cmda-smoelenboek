@@ -162,6 +162,26 @@ app.use("/filterSearch", filterSearchRoute);
 app.use("/searchFilter", searchFilterRoute);
 ```
 
+### Gerelateerde docenten
+
+Op de detail pagina van een docent krijg je naast de informatie over deze docent nog 9 ander docenten te zien die dezelfde specialiteit hebben.
+Hiervoor gebruik ik een lege array en loop ik door alle docenten heen, vervolgens wordt er gekeken of deze docent dezelfde specialiteit heeft als de docent waarop je geklikt is en of deze niet dezelfde voor en achternaam heeft als de docent waarop geklikt is. Als dat zo is wordt deze in de array gestopt.
+
+```js
+  let relatedTeachers = [];
+  teachers.forEach((docent) => {
+    if (
+      docent.data.naam[0].text !== document.data.naam[0].text &&
+      docent.data.achternaam[0].text !== document.data.achternaam[0].text
+    ) {
+      if (document.data.specaliteit == docent.data.specaliteit) {
+        relatedTeachers.push({
+          docent: docent,
+        });
+      }
+    }
+  });
+```
 
 
 ### Filter
