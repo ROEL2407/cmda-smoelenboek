@@ -82,7 +82,7 @@ Met dit online smoelenboek gaan wij proberen de volgende user stories te behalen
 
 1. Docent opzoeken
 
-Als student, wil ik snel een naam bij een gezicht kunnen vinden, zodat ik weet hoe mijn docent er uitziet/ook al weer heet.
+Als student, wil ik snel een naam bij een gezicht kunnen vinden, zodat ik weet hoe mijn docent er uitziet/ook alweer heet.
 
 2. Connectie met docent maken
 
@@ -94,7 +94,7 @@ Als docent, wil ik eenvoudig mijn profiel kunnen wijzigen, zodat ik dat niet op 
 
 ## Design Challenge
 
-De docenten moeten met z'n allen op een heel groot scherm zichtbaar zijn. Je moet kunnen klikken op een foto en dan meer info kunnen lezen. En idealiter zou het gekoppeld moeten zijn aan een bestaande API zodat docenten hun eigen profiel kunnen updaten.
+De docenten moeten met zijn allen op een heel groot scherm zichtbaar zijn. Je moet kunnen klikken op een foto en dan meer info kunnen lezen. En idealiter zou het gekoppeld moeten zijn aan een bestaande API zodat docenten hun eigen profiel kunnen updaten.
 
 ## Oplossing
 
@@ -108,7 +108,7 @@ Tijdens onze tijd die wij werkten aan deze opdracht hebben wij keuzes moeten mak
 
 Vanuit de minor werd ons aangeraden om het headless cms Prismic te gebruiken. Een headless CMS is een systeem waarin de gebruiken informatie kan zetten waar zelf vervolgens nog een website aan gekoppeld moet worden. Wat wij echter nodig hadden is dat er op de eigen website informatie gegeven kan worden zodat deze vervolgens afgebeeld kan worden. In ons geval was dat een docent zelf op de website zijn of haar informatie kan aanmaken of aanpassen. Dit kan jammer genoeg niet met prismic. Wij hebben toen met de opdrachtgever besloten dat wisselen naar een ander headless cms te veel tijd in zou nemen. Hierdoor hebben we besloten om bij Prismic te blijven en het account dat gebruikt kan worden voor het cms zelf, te gebruiken als de enige manier dat er data aangeleverd kan worden aangezien dit de enige mogelijke optie is die geen geld zou kosten.
 
-De keuze om bij Prismic te blijven heeft meerdere gevolgen. Het eerste gevolg is dat de user story "Profiel kunnen wijzigen" niet optimaal uitgevoerd kan worden doordat er maar 1 account is. Het tweede gevolg is dat er geen connectie met de rooster website gemaakt kan worden. De opdrachtgever wilde dat de docenten niet zelf hun beschikbaarheid hoefde in te vullen door via de rooster website van de HvA een csv bestand te exporteren en deze via het cms te importeren. Echter kost het importeren geld aangezien dit een premium functie is binnen Prismic.
+De keuze om bij Prismic te blijven heeft meerdere gevolgen. Het eerste gevolg is dat de user story "Profiel kunnen wijzigen" niet optimaal uitgevoerd kan worden doordat er maar 1 account is. Het tweede gevolg is dat er geen connectie met de roosterwebsite gemaakt kan worden. De opdrachtgever wilde dat de docenten niet zelf hun beschikbaarheid hoefde in te vullen door via de roosterwebsite van de HvA een csv bestand te exporteren en deze via het cms te importeren. Echter kost het importeren geld aangezien dit een premium functie is binnen Prismic.
 
 ### Scrollen
 
@@ -120,7 +120,7 @@ Wij hebben ervoor gekozen om eerst een pop-up te laten zien met wat basis inform
 
 ### Footer
 
-Wij hebben ervoor gekozen om alle navigatie in de footer te plaatsen, dit hebben wij gedaan omdat de website op een groot scherm getoond wordt waarbij niet alle docenten / studenten bij de bovenkant van het scherm kunnen komen. Door middel van de scroll knoppen kan iedereen bij de bovenste rij docenten komen.
+Wij hebben ervoor gekozen om alle navigatie in de footer te plaatsen, dit hebben wij gedaan omdat de website op een groot scherm getoond wordt waarbij niet alle docenten / studenten bij de bovenkant van het scherm kunnen komen. Door middel van de scrol knoppen kan iedereen bij de bovenste rij docenten komen.
 
 ### Zoomen
 
@@ -134,7 +134,6 @@ Wij hebben door middel van de volgende code geprobeerd het zoomen uit te zetten 
 ```
 
 Dit zou op alle devices de zoom functie moeten uitschakelen. Echter is dit niet het geval op het Sharp scherm waar wij mee getest hebben. Hierdoor raden wij aan om dit uit te schakelen in de instellingen op het device waar dit project op gaat draaien.
-
 
 ## Uitleg van de code
 
@@ -205,6 +204,27 @@ In de view loop je door alle letters heen met daarbinnen nog een loop waarbij je
 </section>
 <% })} %>
 
+```
+
+#### focus
+Omdat als je op een letter klikt je daarna als het ware naar een nieuwe pagina gaat (bijvoorbeeld catalogus#h) wordt de focus state verwijderd. Daarom wordt er met JavaScript een class op gezet die de achtergrond van de letter een andere kleur geeft. Als er vervolgens op een andere letter geklikt wordt, wordt deze class verwijderd. 
+
+```js
+let oldId;
+
+function letterClicked(clicked_id) {
+  const link = document.getElementById(clicked_id);
+  const linkOld = document.getElementById(oldId);
+
+  // remove class from previous clicked id
+  if (oldId !== undefined) {
+    console.log("remove");
+    linkOld.classList.remove("letterClicked");
+  }
+
+  oldId = clicked_id;
+  link.classList.add("letterClicked");
+}
 ```
 
 ### Gerelateerde docenten
@@ -305,7 +325,7 @@ if (
 }
 ```
 
-Als je op de omhoog of omlaag kmopt drukt om te scrollen wordt er een functie aangeroepen, deze scroolt vervolgens het beeld een stukje omhoog of omlaag.
+Als je op de omhoog of omlaag knop drukt om te scrollen wordt er een functie aangeroepen, deze scrolt vervolgens het beeld een stukje omhoog of omlaag.
 
 ```js
 function up() {
