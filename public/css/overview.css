@@ -20,7 +20,8 @@
 }
 
 .frame {
-  max-width: 83px;
+  width: 85px;
+  height: 115px;
 }
 
 .teacher {
