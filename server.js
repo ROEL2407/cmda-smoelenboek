@@ -8,8 +8,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 var router = express.Router();
 
-
-
 // Set EJS as templating engine
 app.set("view engine", "ejs");
 app.set("views", "./views");

@@ -7,32 +7,18 @@ searchFilterRoute.get("/", async (req, res) => {
   const document = await client.getAllByType("persoon");
   let docenten = [];
 
-  if (filterTeachers.length == 0) {
-    document.forEach((docent) => {
-      let firstName = docent.docent.data.naam[0].text;
-      let lastName = docent.docent.data.achternaam[0].text;
-      let fullName = firstName + " " + lastName;
+  //get all teachers with search text
+  filterTeachers.forEach((docent) => {
+    let firstName = docent.docent.data.naam[0].text;
+    let lastName = docent.docent.data.achternaam[0].text;
+    let fullName = firstName + " " + lastName;
 
-      if (fullName.toLowerCase().includes(req.query.q)) {
-        docenten.push({
-          docent: docent.docent,
-        });
-      }
-    });
-  } else {
-    //get all teachers with search text
-    filterTeachers.forEach((docent) => {
-      let firstName = docent.docent.data.naam[0].text;
-      let lastName = docent.docent.data.achternaam[0].text;
-      let fullName = firstName + " " + lastName;
-
-      if (fullName.toLowerCase().includes(req.query.q)) {
-        docenten.push({
-          docent: docent.docent,
-        });
-      }
-    });
-  }
+    if (fullName.toLowerCase().includes(req.query.q)) {
+      docenten.push({
+        docent: docent.docent,
+      });
+    }
+  });
 
   let result;
   let teachers = [];

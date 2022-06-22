@@ -135,11 +135,12 @@ Wij hebben door middel van de volgende code geprobeerd het zoomen uit te zetten 
 
 Dit zou op alle devices de zoom functie moeten uitschakelen. Echter is dit niet het geval op het Sharp scherm waar wij mee getest hebben. Hierdoor raden wij aan om dit uit te schakelen in de instellingen op het device waar dit project op gaat draaien.
 
+
 ## Uitleg van de code
 
 ### Routes
 
-De code is ingedeeld in routes, deze worden geimporteert in de server.js.
+De code is ingedeeld in routes, deze worden geïmporteerd in de server.js.
 
 ```js
 import { homeRoute } from "./routes/homeRoute.js";
@@ -150,7 +151,7 @@ import { filterRoute } from "./routes/filterRoute.js";
 import { filterSearchRoute } from "./routes/filterSearchRoute.js";
 import { searchFilterRoute } from "./routes/searchFilterRoute.js";
 ```
-Vervolgens wordt er gekozen via welke url je bij deze route kan komen. 
+Vervolgens wordt er gekozen via welke URL je bij deze route kan komen. 
 
 ```js
 app.use("/", homeRoute);
@@ -162,11 +163,75 @@ app.use("/filterSearch", filterSearchRoute);
 app.use("/searchFilter", searchFilterRoute);
 ```
 
+### Catalogus
+
+Voor de catalogus pagina worden alle docenten gesorteerd op begin letter. Dit wordt gedaan door te kijken of deze begin letter al voor komt als een child element, zo ja wordt deze daar aan toegevoegd en zo niet wordt deze aangemaakt. 
+
+``` js
+  // Sort teachers by letter
+  let data = document.reduce((r, e) => {
+    // get first letter of name of current element
+    let group = e.data.naam[0].text[0];
+    // if there is no property in accumulator with this letter create it
+    if (!r[group]) r[group] = { group, children: [e] };
+    // if there is push current element to children array for that letter
+    else r[group].children.push(e);
+    return r;
+  }, {});
+```
+
+Vervolgens worden alle letters van het alfabet in een array gestopt door ze te selecteren uit "fromCharCode".
+
+```js
+  let letters = [];
+  for (let i = 0; i < 26; i++) {
+    let letter = String.fromCharCode(97 + i).toLocaleUpperCase();
+    letters.push(letter);
+  }
+```
+In de view loop je door alle letters heen met daarbinnen nog een loop waarbij je de docenten ophaalt die bij die letter hoort. 
+
+```ejs
+<% docenten.forEach(groups => { %>
+<h2 id="<%- groups.group-%>"><%- groups.group-%></h2>
+<section class="docenten">
+  <% groups.children.forEach(teacher => { %>
+
+  <h4>
+    <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+    ctx.prismicH.asText(teacher.data.achternaam) %>
+  </h4>
+  <% }) %>
+</section>
+<% })} %>
+
+```
+
+### Gerelateerde docenten
+
+Op de detailpagina van een docent krijg je naast de informatie over deze docent nog 9 ander docenten te zien die dezelfde specialiteit hebben.
+Hiervoor gebruik ik een lege array en loop ik door alle docenten heen, vervolgens wordt er gekeken of deze docent dezelfde specialiteit heeft als de docent waarop je geklikt is en of deze niet dezelfde voor en achternaam heeft als de docent waarop geklikt is. Als dat zo is wordt deze in de array gestopt.
+
+```js
+  let relatedTeachers = [];
+  teachers.forEach((docent) => {
+    if (
+      docent.data.naam[0].text !== document.data.naam[0].text &&
+      docent.data.achternaam[0].text !== document.data.achternaam[0].text
+    ) {
+      if (document.data.specaliteit == docent.data.specaliteit) {
+        relatedTeachers.push({
+          docent: docent,
+        });
+      }
+    }
+  });
+```
 
 
 ### Filter
 
-Met het filter feature wordt er gekeken naar welke category je kiest, vervoelgens wordt er gekeken of de docent deze category als specialiteit heeft en als dit zo is wordt deze in een lijstje gestopt. 
+Met het filter feature wordt er gekeken naar welke categorie je kiest, vervolgens wordt er gekeken of de docent deze categorie als specialiteit heeft en als dit zo is wordt deze in een lijstje gestopt. 
 
 ``` js
   document.forEach((docent) => {
@@ -195,6 +260,29 @@ Bij het zoeken wordt eerst de voornaam met de achternaam gecombineerd, zo kan er
     }
   });
 ```
+#### Filteren na zoeken
+
+Als je hebt gezocht en daarna wilt filteren wordt hiervoor een globaal variabel gemaakt, deze wordt aangemaakt in de searchRoute.js
+
+``` js
+  global.searchTeachers = docenten;
+```
+
+Vervolgens wordt dit variabel gebruikt in filterSearch.js om te kijken welke specialiteit je geselecteerd hebt.
+
+``` js
+  docenten = [];
+
+  searchTeachers.forEach((docent) => {
+    if (docent.docent.data.specaliteit.includes(req.query.category)) {
+      docenten.push({
+        docent: docent.docent,
+      });
+    }
+  });
+```
+
+Dit werkt hetzelfde als je eerst filtert en dan een naam zoekt, maar dan gebruik je searchFilter.js.
 
 
 ## Wiki's
@@ -205,5 +293,7 @@ Bij het zoeken wordt eerst de voornaam met de achternaam gecombineerd, zo kan er
 ## Licentie
 
 ![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
+
+This work is licensed under [GNU GPLv3](./LICENSE).
 
 This work is licensed under [GNU GPLv3](./LICENSE).
