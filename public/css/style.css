@@ -152,6 +152,7 @@ footer #catalogButton {
   max-width: 33%;
   margin: 0em 5em;
   pointer-events: initial;
+  color: black;
 }
 
 .footerCat {
