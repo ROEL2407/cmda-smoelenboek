@@ -8,6 +8,7 @@
 - [Oplossing](#Oplossing)
 - [Gemaakte keuzes](#Gemaakte-keuzes)
 - [Uitleg van de code](#Uitleg-van-de-code)
+- [Installeren](#Installeren)
 - [Wiki's](#Wiki's)
 - [Licentie](#Licentie)
 
@@ -342,6 +343,25 @@ function down() {
   });
 }
 ```
+
+## Installeren
+
+Clone deze repository
+
+```
+https://github.com/ROEL2407/cmda-smoelenboek.git
+```
+
+Installeer de packages
+```
+npm install
+```
+
+Start de app
+```
+npm start
+```
+
 
 ## Wiki's
 
