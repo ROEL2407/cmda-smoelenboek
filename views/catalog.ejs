@@ -28,10 +28,10 @@
                 class="teacher"
                 alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
                 ctx.prismicH.asText(teacher.data.achternaam) %>"
-                <% if(!document.data.foto.url){%>
+                <% if(!teacher.data.foto.url){%>
                   src="/images/no-img.jpg" 
                 <% } else { %>
-                  src="<%- document.data.foto.url %>"
+                  src="<%- teacher.data.foto.url %>"
                 <% } %>  
               />
             </div>
