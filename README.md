@@ -195,6 +195,29 @@ Bij het zoeken wordt eerst de voornaam met de achternaam gecombineerd, zo kan er
     }
   });
 ```
+#### Filteren na zoeken
+
+Als je hebt gezocht en daarna wilt filteren wordt hiervoor een globaal variabel gemaakt, deze wordt aangemaakt in de searchRoute.js
+
+``` js
+  global.searchTeachers = docenten;
+```
+
+Vervolgens wordt dit variabel gebruikt in filterSearch.js om te kijken welke specialiteit je geselecteerd hebt.
+
+``` js
+  docenten = [];
+
+  searchTeachers.forEach((docent) => {
+    if (docent.docent.data.specaliteit.includes(req.query.category)) {
+      docenten.push({
+        docent: docent.docent,
+      });
+    }
+  });
+```
+
+Dit werkt hetzelfde als je eerst filtert en dan een naam zoekt maar dan gebruik je searchFilter.js.
 
 
 ## Wiki's
