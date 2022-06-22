@@ -47,10 +47,14 @@
             </h2>
             <div class="popupWrapper">
               <img
-                class="teacherImage"
+                class="teacher"
                 alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
                 ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
-                src="<%- teacher.docent.data.foto.url %>"
+                <% if(!teacher.docent.data.foto.url){%>
+                  src="/images/no-img.jpg" 
+                <% } else { %>
+                  src="<%- teacher.docent.data.foto.url %>"
+                <% } %>  
               />
               <div id="info">
                 <% if(teacher.docent.data.email.length > 0){ %>

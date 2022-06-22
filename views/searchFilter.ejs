@@ -47,10 +47,14 @@
             </h2>
             <div class="popupWrapper">
               <img
-                class="teacherImage"
+                class="teacher"
                 alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
                 ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
-                src="<%- teacher.docent.data.foto.url %>"
+                <% if(!teacher.docent.data.foto.url){%>
+                  src="/images/no-img.jpg" 
+                <% } else { %>
+                  src="<%- teacher.docent.data.foto.url %>"
+                <% } %>  
               />
               <div id="info">
                 <% if(teacher.docent.data.email.length > 0){ %>
@@ -88,7 +92,16 @@
               src="/images/frames/<%- teacher.data.frame%>.png"
             />
             <% } %>
-            <img class="teacher" src="<%- teacher.data.foto.url %>" />
+            <img
+              class="teacher"
+              alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
+              <% if(!teacher.docent.data.foto.url){%>
+                src="/images/no-img.jpg" 
+              <% } else { %>
+                src="<%- teacher.docent.data.foto.url %>"
+              <% } %>  
+            />
           </div>
           <h3>
             <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
@@ -107,10 +120,14 @@
           </h2>
           <div class="popupWrapper">
             <img
-              class="teacherImage"
-              alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-              ctx.prismicH.asText(teacher.data.achternaam) %>"
-              src="<%- teacher.data.foto.url %>"
+              class="teacher"
+              alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
+              <% if(!teacher.docent.data.foto.url){%>
+                src="/images/no-img.jpg" 
+              <% } else { %>
+                src="<%- teacher.docent.data.foto.url %>"
+              <% } %>  
             />
             <div id="info">
               <% if(teacher.data.email.length > 0){ %>

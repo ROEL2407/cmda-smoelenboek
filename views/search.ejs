@@ -47,10 +47,14 @@
             </h2>
             <div class="popupWrapper">
               <img
+                class="teacher"
                 alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
-              ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
-                class="teacherImage"
-                src="<%- teacher.docent.data.foto.url %>"
+                ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
+                <% if(!teacher.docent.data.foto.url){%>
+                  src="/images/no-img.jpg" 
+                <% } else { %>
+                  src="<%- teacher.docent.data.foto.url %>"
+                <% } %>  
               />
               <div id="info">
                 <% if(teacher.docent.data.email.length > 0){ %>
@@ -92,8 +96,12 @@
             <img
               class="teacher"
               alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
-            ctx.prismicH.asText(teacher.data.achternaam) %>"
-              src="<%- teacher.data.foto.url %>"
+              ctx.prismicH.asText(teacher.data.achternaam) %>"
+              <% if(!teacher.data.foto.url){%>
+                src="/images/no-img.jpg" 
+              <% } else { %>
+                src="<%- teacher.data.foto.url %>"
+              <% } %>  
             />
           </div>
           <h3>
@@ -113,7 +121,16 @@
           </h2>
           <div class="popupWrapper">
             <div class="images">
-              <img class="teacher" src="<%- teacher.data.foto.url %>" />
+              <img
+                class="teacher"
+                alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+                ctx.prismicH.asText(teacher.data.achternaam) %>"
+                <% if(!teacher.data.foto.url){%>
+                  src="/images/no-img.jpg" 
+                <% } else { %>
+                  src="<%- teacher.data.foto.url %>"
+                <% } %>  
+              />
             </div>
             <div id="info">
               <% if(teacher.data.email.length > 0){ %>
