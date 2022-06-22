@@ -162,6 +162,50 @@ app.use("/filterSearch", filterSearchRoute);
 app.use("/searchFilter", searchFilterRoute);
 ```
 
+### Catalogus
+
+Voor de catalogus pagina worden alle docenten gesorteert op begin letter. Dit wordt gedaan door te kijken of deze begin letter al voor komt als een child element, zo ja wordt deze daar aan toegevoegd en zo niet wordt deze aangemaakt. 
+
+``` js
+  // Sort teachers by letter
+  let data = document.reduce((r, e) => {
+    // get first letter of name of current element
+    let group = e.data.naam[0].text[0];
+    // if there is no property in accumulator with this letter create it
+    if (!r[group]) r[group] = { group, children: [e] };
+    // if there is push current element to children array for that letter
+    else r[group].children.push(e);
+    return r;
+  }, {});
+```
+
+Vervolgens worden alle letters van het alfabet in een array gestopt door ze te selecteren uit "fromCharCode".
+
+```js
+  let letters = [];
+  for (let i = 0; i < 26; i++) {
+    let letter = String.fromCharCode(97 + i).toLocaleUpperCase();
+    letters.push(letter);
+  }
+```
+In de view loop je door alle letters heen met daarbinnen nog een loop waarbij je de docenten ophaalt die bij die letter hoort. 
+
+```ejs
+<% docenten.forEach(groups => { %>
+<h2 id="<%- groups.group-%>"><%- groups.group-%></h2>
+<section class="docenten">
+  <% groups.children.forEach(teacher => { %>
+
+  <h4>
+    <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+    ctx.prismicH.asText(teacher.data.achternaam) %>
+  </h4>
+  <% }) %>
+</section>
+<% })} %>
+
+```
+
 ### Gerelateerde docenten
 
 Op de detail pagina van een docent krijg je naast de informatie over deze docent nog 9 ander docenten te zien die dezelfde specialiteit hebben.
