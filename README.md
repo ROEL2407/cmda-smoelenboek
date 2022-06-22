@@ -284,6 +284,44 @@ Vervolgens wordt dit variabel gebruikt in filterSearch.js om te kijken welke spe
 
 Dit werkt hetzelfde als je eerst filtert en dan een naam zoekt, maar dan gebruik je searchFilter.js.
 
+### Scrollen
+
+Omdat er bij de pagina een stuk wit ruimte aan de bovenkant zit zodat je naar boven kunt scrollen wordt wanneer je de pagina laadt deze naar beneden verplaatst zodat de hele pagina met content gevuld wordt en je de wit ruimte niet ziet.
+
+```js
+if (
+  window.location.pathname === "/" ||
+  window.location.pathname === "/catalog" ||
+  window.location.pathname === "/overview" ||
+  window.location.pathname === "/search" ||
+  window.location.pathname === "/filter"
+) {
+  window.onload = () => {
+    window.scrollTo({
+      top: 850,
+      behavior: "smooth",
+    });
+  };
+}
+```
+
+Als je op de omhoog of omlaag kmopt drukt om te scrollen wordt er een functie aangeroepen, deze scroolt vervolgens het beeld een stukje omhoog of omlaag.
+
+```js
+function up() {
+  document.querySelector("html").scrollBy({
+    top: -170,
+    behavior: "smooth",
+  });
+}
+
+function down() {
+  document.querySelector("html").scrollBy({
+    top: 170,
+    behavior: "smooth",
+  });
+}
+```
 
 ## Wiki's
 
