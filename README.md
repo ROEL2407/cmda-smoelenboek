@@ -135,11 +135,12 @@ Wij hebben door middel van de volgende code geprobeerd het zoomen uit te zetten 
 
 Dit zou op alle devices de zoom functie moeten uitschakelen. Echter is dit niet het geval op het Sharp scherm waar wij mee getest hebben. Hierdoor raden wij aan om dit uit te schakelen in de instellingen op het device waar dit project op gaat draaien.
 
+
 ## Uitleg van de code
 
 ### Routes
 
-De code is ingedeeld in routes, deze worden geimporteert in de server.js.
+De code is ingedeeld in routes, deze worden geïmporteerd in de server.js.
 
 ```js
 import { homeRoute } from "./routes/homeRoute.js";
@@ -150,7 +151,7 @@ import { filterRoute } from "./routes/filterRoute.js";
 import { filterSearchRoute } from "./routes/filterSearchRoute.js";
 import { searchFilterRoute } from "./routes/searchFilterRoute.js";
 ```
-Vervolgens wordt er gekozen via welke url je bij deze route kan komen. 
+Vervolgens wordt er gekozen via welke URL je bij deze route kan komen. 
 
 ```js
 app.use("/", homeRoute);
@@ -164,7 +165,7 @@ app.use("/searchFilter", searchFilterRoute);
 
 ### Catalogus
 
-Voor de catalogus pagina worden alle docenten gesorteert op begin letter. Dit wordt gedaan door te kijken of deze begin letter al voor komt als een child element, zo ja wordt deze daar aan toegevoegd en zo niet wordt deze aangemaakt. 
+Voor de catalogus pagina worden alle docenten gesorteerd op begin letter. Dit wordt gedaan door te kijken of deze begin letter al voor komt als een child element, zo ja wordt deze daar aan toegevoegd en zo niet wordt deze aangemaakt. 
 
 ``` js
   // Sort teachers by letter
@@ -208,7 +209,7 @@ In de view loop je door alle letters heen met daarbinnen nog een loop waarbij je
 
 ### Gerelateerde docenten
 
-Op de detail pagina van een docent krijg je naast de informatie over deze docent nog 9 ander docenten te zien die dezelfde specialiteit hebben.
+Op de detailpagina van een docent krijg je naast de informatie over deze docent nog 9 ander docenten te zien die dezelfde specialiteit hebben.
 Hiervoor gebruik ik een lege array en loop ik door alle docenten heen, vervolgens wordt er gekeken of deze docent dezelfde specialiteit heeft als de docent waarop je geklikt is en of deze niet dezelfde voor en achternaam heeft als de docent waarop geklikt is. Als dat zo is wordt deze in de array gestopt.
 
 ```js
@@ -230,7 +231,7 @@ Hiervoor gebruik ik een lege array en loop ik door alle docenten heen, vervolgen
 
 ### Filter
 
-Met het filter feature wordt er gekeken naar welke category je kiest, vervoelgens wordt er gekeken of de docent deze category als specialiteit heeft en als dit zo is wordt deze in een lijstje gestopt. 
+Met het filter feature wordt er gekeken naar welke categorie je kiest, vervolgens wordt er gekeken of de docent deze categorie als specialiteit heeft en als dit zo is wordt deze in een lijstje gestopt. 
 
 ``` js
   document.forEach((docent) => {
@@ -281,7 +282,7 @@ Vervolgens wordt dit variabel gebruikt in filterSearch.js om te kijken welke spe
   });
 ```
 
-Dit werkt hetzelfde als je eerst filtert en dan een naam zoekt maar dan gebruik je searchFilter.js.
+Dit werkt hetzelfde als je eerst filtert en dan een naam zoekt, maar dan gebruik je searchFilter.js.
 
 
 ## Wiki's
@@ -292,5 +293,7 @@ Dit werkt hetzelfde als je eerst filtert en dan een naam zoekt maar dan gebruik 
 ## Licentie
 
 ![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
+
+This work is licensed under [GNU GPLv3](./LICENSE).
 
 This work is licensed under [GNU GPLv3](./LICENSE).
