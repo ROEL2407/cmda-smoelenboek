@@ -42,9 +42,12 @@
               ctx.prismicH.asText(teacher.data.achternaam) %>
             </h2>
             <div class="popupWrapper">
-              <div class="images">
-                <img class="teacher" src="<%- teacher.data.foto.url %>" />
-              </div>
+              <img
+                class="teacherImage"
+                alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.data.achternaam) %>"
+                src="<%- teacher.data.foto.url %>"
+              />
               <div id="info">
                 <% if(teacher.data.email.length > 0){ %>
                 <h3>Email</h3>

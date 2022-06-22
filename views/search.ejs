@@ -14,10 +14,16 @@
               <% if(teacher.docent.data.frame !== null){ %>
               <img
                 class="frame"
+                alt="<%- teacher.docent.data.frame%> lijstje"
                 src="/images/frames/<%- teacher.docent.data.frame%>.png"
               />
               <% } %>
-              <img class="teacher" src="<%- teacher.docent.data.foto.url %>" />
+              <img
+                class="teacher"
+                alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
+                src="<%- teacher.docent.data.foto.url %>"
+              />
             </div>
             <h3>
               <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
@@ -36,12 +42,12 @@
               ctx.prismicH.asText(teacher.docent.data.achternaam) %>
             </h2>
             <div class="popupWrapper">
-              <div class="images">
-                <img
-                  class="teacher"
-                  src="<%- teacher.docent.data.foto.url %>"
-                />
-              </div>
+              <img
+                alt="foto van <%- ctx.prismicH.asText(teacher.docent.data.naam) %> <%-
+              ctx.prismicH.asText(teacher.docent.data.achternaam) %>"
+                class="teacherImage"
+                src="<%- teacher.docent.data.foto.url %>"
+              />
               <div id="info">
                 <% if(teacher.docent.data.email.length > 0){ %>
                 <h3>Email</h3>
@@ -75,10 +81,16 @@
             <% if(teacher.data.frame !== null){ %>
             <img
               class="frame"
+              alt="<%- teacher.data.frame%> lijstje"
               src="/images/frames/<%- teacher.data.frame%>.png"
             />
             <% } %>
-            <img class="teacher" src="<%- teacher.data.foto.url %>" />
+            <img
+              class="teacher"
+              alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+            ctx.prismicH.asText(teacher.data.achternaam) %>"
+              src="<%- teacher.data.foto.url %>"
+            />
           </div>
           <h3>
             <%- ctx.prismicH.asText(teacher.data.naam) %> <%-

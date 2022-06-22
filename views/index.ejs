@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0, user-scalable=no" />    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0, user-scalable=no"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css"
@@ -17,19 +20,27 @@
       <section class="allTeachers">
         <section class="docenten">
           <% if (docenten.length == 0) { %>
-            <!-- zero state -->
-            <h2 class="zero">Momenteel zijn er nog geen docenten die hun informatie hebben ingevuld, kom later terug.</h2>
-          <% } else { %>
-          <% docenten.forEach(teacher => { %>
+          <!-- zero state -->
+          <h2 class="zero">
+            Momenteel zijn er nog geen docenten die hun informatie hebben
+            ingevuld, kom later terug.
+          </h2>
+          <% } else { %> <% docenten.forEach(teacher => { %>
           <a href="" class="teacherLink">
             <div class="images">
               <% if(teacher.data.frame !== null){ %>
               <img
                 class="frame"
+                alt="<%- teacher.data.frame%> lijstje"
                 src="/images/frames/<%- teacher.data.frame%>.png"
               />
               <% } %>
-              <img class="teacher" src="<%- teacher.data.foto.url %>" />
+              <img
+                class="teacher"
+                src="<%- teacher.data.foto.url %>"
+                alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+                ctx.prismicH.asText(teacher.data.achternaam) %>"
+              />
             </div>
             <h4>
               <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
@@ -43,9 +54,12 @@
               ctx.prismicH.asText(teacher.data.achternaam) %>
             </h2>
             <div class="popupWrapper">
-              <div class="images">
-                <img class="teacher" src="<%- teacher.data.foto.url %>" />
-              </div>
+              <img
+                class="teacherImage"
+                alt="foto van <%- ctx.prismicH.asText(teacher.data.naam) %> <%-
+                  ctx.prismicH.asText(teacher.data.achternaam) %>"
+                src="<%- teacher.data.foto.url %>"
+              />
               <div id="info">
                 <% if(teacher.data.email.length > 0){ %>
                 <h3>Email</h3>
@@ -71,8 +85,7 @@
               <p>Sluiten</p>
             </button>
           </div>
-          <% }) %>
-        <% } %>
+          <% }) %> <% } %>
         </section>
       </section>
       <%- include("./components/keyboard.ejs") -%>
