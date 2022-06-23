@@ -14,7 +14,9 @@ if (
   window.location.pathname === "/catalog" ||
   window.location.pathname === "/overview" ||
   window.location.pathname === "/search" ||
-  window.location.pathname === "/filter"
+  window.location.pathname === "/filter" ||
+  window.location.pathname === "/filterSearch" ||
+  window.location.pathname === "/searchFilter"
 ) {
   window.onload = () => {
     window.scrollTo({
@@ -33,7 +35,17 @@ links.forEach((link) => {
       }
     })
     this.nextElementSibling.classList.remove("hidden");
+    if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/catalog" ||
+      window.location.pathname === "/overview" ||
+      window.location.pathname === "/search" ||
+      window.location.pathname === "/filter" ||
+      window.location.pathname === "/filterSearch" ||
+      window.location.pathname === "/searchFilter"
+    ) {
     all_teachers.classList.add("openPop");
+    }
   });
 });
 
@@ -42,7 +54,17 @@ closes.forEach((close) => {
     event.preventDefault();
     pop_ups.forEach((pop_up) => {
       pop_up.classList.add("hidden");
+    if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/catalog" ||
+      window.location.pathname === "/overview" ||
+      window.location.pathname === "/search" ||
+      window.location.pathname === "/filter" ||
+      window.location.pathname === "/filterSearch" ||
+      window.location.pathname === "/searchFilter"
+    ) {
       all_teachers.classList.remove("openPop");
+    }
     });
   });
 });
@@ -130,7 +152,7 @@ function idleKick() {
   let idleTimeout; // variable to hold the timeout, do not modify
 
   const resetIdleTimeout = function() {
-    
+
       // Clears the existing timeout
       if(idleTimeout) clearTimeout(idleTimeout);
 
