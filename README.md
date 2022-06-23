@@ -429,6 +429,19 @@ Start de app
 npm start
 ```
 
+### Prismic
+Inloggen bij Prismic kan via [https://prismic.io/dashboard/login](https://prismic.io/dashboard/login)
+
+Vervolgens klik je op "Smoelenboek" onder het kopje "All repositories"
+
+Dan kom je op een pagina waar je alle docenten kunt zien die momenteel in het CMS zitten. 
+
+Je kan de informatie van een docent aanpassen door erop te klikken, als je klaar bent met aanpassen klik je bovenin op "save" en vervolgens op "publish" en dan nog een keer op "publish" 
+
+Als je een nieuwe docent wilt toeveogen klik je op "create new" rechts bovenin, vervolgens werkt het hetzelfde als een docent aanpassen. 
+
+![screenshot](https://user-images.githubusercontent.com/24413936/175310228-b30064eb-e595-48c3-837c-321fa6080826.png)
+
 
 ## Wiki's
 
