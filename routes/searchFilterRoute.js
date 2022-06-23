@@ -1,4 +1,3 @@
-import e from "express";
 import express from "express";
 export const searchFilterRoute = express.Router();
 import { client } from "../config/prismicConfig.js";

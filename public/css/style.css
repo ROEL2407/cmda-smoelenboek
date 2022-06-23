@@ -100,6 +100,15 @@ footer #catalogButton {
   background-color: darkgrey;
   color: #000;
 }
+.backButton {
+  display: flex;
+  align-items: center;
+}
+
+.backButton img {
+  height: 2em;
+  margin-right: 0.5em;
+}
 
 /* Home page / smoelenboek overzicht */
 .allTeachers {
@@ -154,7 +163,7 @@ footer #catalogButton {
 
 #keyboard {
   max-width: 33%;
-  margin: 0em 5em;
+  margin: 0em 22em;
   pointer-events: initial;
   color: black;
 }

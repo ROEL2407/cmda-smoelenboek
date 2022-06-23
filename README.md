@@ -344,6 +344,73 @@ function down() {
 }
 ```
 
+### Pop-up
+
+De pop-up heeft twee functies nodig om goed te functioneren.
+De eerste functie is een functie om de pop-up te openen.
+
+```js
+links.forEach((link) => {
+  link.addEventListener("click", function (event) {
+  // voor elke docent wordt er gecheckt of deze geklikt wordt
+    event.preventDefault();
+    pop_ups.forEach(pop => {
+      if (!pop.classList.contains("hidden")) {
+      // kijkt of er al een pop-up open staat en klap deze dicht wanneer dat nodig is
+        pop.classList.add("hidden");
+      }
+    })
+    // open de pop-up en druk de content samen
+    this.nextElementSibling.classList.remove("hidden");
+    all_teachers.classList.add("openPop");
+  });
+});
+```
+
+De pop-up kan ook gesloten worden via de sluit button. Wanneer er op de button geklikt wordt, wordt de volgende functie uitgevoerd.
+```js
+closes.forEach((close) => {
+  close.addEventListener("click", function (event) {
+  // voor elke close button wordt er gecheckt of deze geklikt wordt
+    event.preventDefault();
+    pop_ups.forEach((pop_up) => {
+      //sluit alle pop-ups
+      pop_up.classList.add("hidden");
+      all_teachers.classList.remove("openPop");
+    });
+  });
+});
+```
+
+### Idle timer
+De Idle timer checkt of er geen interactie wordt gemaakt met het prototype. Wordt dit voor 5 minuten niet gedaan, dan redirect het prototype terug naar de home pagina.
+```js
+function idleKick() {
+  const idleDurationSecs = 300;    // X aantal seconden
+  const redirectUrl = '/';  // Redirect idle gebruikers naar deze url
+  let idleTimeout; // een variabel om de timeout in op te slaan
+
+  const resetIdleTimeout = function() {
+    
+      // cleart de bestaande timeout
+      if(idleTimeout) clearTimeout(idleTimeout);
+
+      // Maakt een nieuwe timeout om de url te laden waar naar geredirect wordt na het aantal seconden
+      idleTimeout = setTimeout(() => location.href = redirectUrl, idleDurationSecs * 1000);
+  };
+
+  // Init op page load
+  resetIdleTimeout();
+
+  // Reset de idle timeout op de volgende interacties
+  ['click', 'touchstart', 'mousemove'].forEach(evt => 
+      document.addEventListener(evt, resetIdleTimeout, false)
+  );
+
+}
+idleKick();
+```
+
 ## Installeren
 
 Clone deze repository
