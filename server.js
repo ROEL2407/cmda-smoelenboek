@@ -1,12 +1,8 @@
-import path from "path";
 import express from "express";
-import { fileURLToPath } from "url";
 import * as prismicH from "@prismicio/helpers";
-import { client } from "./config/prismicConfig.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
-var router = express.Router();
 
 // Set EJS as templating engine
 app.set("view engine", "ejs");
@@ -39,10 +35,6 @@ app.use("/search", searchRoute);
 app.use("/filter", filterRoute);
 app.use("/filterSearch", filterSearchRoute);
 app.use("/searchFilter", searchFilterRoute);
-
-app.get("/create", (req, res) => {
-  res.render("create", {});
-});
 
 // Listen to application port.
 app.listen(port, () => {
